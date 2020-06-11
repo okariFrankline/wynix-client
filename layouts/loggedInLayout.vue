@@ -2,14 +2,18 @@
   <v-app class="grey lighten-2">
     <!-- Side navigation -->
     <v-navigation-drawer v-model="drawer" app class="grey lighten-2">
-        <v-row class="avatar-row mt-2">
+        <v-row class="avatar-row mt-1">
           <div class="col">
             <v-avatar size="150" class="mb-3">
               <img src="/images/avatar-1.png" class="grey lighten-1">
             </v-avatar>
 
             <!-- Username -->
-            <p class="white--text">Frankline Okari</p>
+            <div>
+              <v-chip class="blue lighten-2" style="margin-left: .4em;">
+                <span class="mx-3 text-center white--text">okarifrank5678</span>
+              </v-chip>
+            </div>
           </div>
         </v-row>
         <!-- Navigation Link -->
