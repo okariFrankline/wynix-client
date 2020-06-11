@@ -1,7 +1,9 @@
 <template>
-  <div class="index">
-    <h1>This is the index page</h1>
-  </div>
+  <v-row>
+    <v-col>
+      <h2>This is the homepage</h2>
+    </v-col>
+  </v-row>
 </template>
 
 <script>
