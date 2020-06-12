@@ -1,5 +1,5 @@
 <template>
-  <v-app class="grey lighten-2">
+  <v-app style="background-color: #f7f8fb !important;">
     <!-- Side navigation -->
     <v-navigation-drawer v-model="drawer" app class="grey lighten-2">
         <v-row class="avatar-row mt-1">
@@ -11,7 +11,7 @@
             <!-- Username -->
             <div>
               <v-chip class="blue lighten-2" style="margin-left: .4em;">
-                <span class="mx-3 text-center white--text">okarifrank5678</span>
+                <span class="mx-3 text-center white--text darken-4">okarifrank5678</span>
               </v-chip>
             </div>
           </div>
@@ -39,12 +39,15 @@
     <!--  End of side navigation bar -->
 
     <!-- App Bar -->
-    <v-app-bar app class="teal accent-4" dark flat>
+    <v-app-bar app class="teal accent-4" dark flat dense>
         <!-- Side navigation bar drawer button -->
         <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="hidden-lg-and-up"></v-app-bar-nav-icon>
         
         <!-- Application brand -->
-        <v-toolbar-title>Wynix</v-toolbar-title>
+        <v-toolbar-title>
+          <v-icon left small>account_circle</v-icon>
+          <span class="font-weight-bold body-2 white--text tex-darken-4">Okarifrank</span>
+        </v-toolbar-title>
         <!-- End of appication brand -->
 
         <v-spacer></v-spacer>
@@ -60,12 +63,10 @@
     <!-- End of app bar -->
 
     <!-- The main app's content -->
-    <v-content>
-      <v-container fluid>
+    <v-content class="mx-5">
         <!-- Main content goes here -->
         <nuxt />
         <!-- End of main content -->
-      </v-container>
     </v-content>
     <!--  End of the app's main content -->
 
