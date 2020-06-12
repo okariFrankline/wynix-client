@@ -216,7 +216,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     .project.tomato-borders {
         border-left: 4px solid #64FFDA;
         border-right: 4px solid #64FFDA;
