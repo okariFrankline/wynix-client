@@ -51,7 +51,7 @@
                                     <div style="margin-bottom: .3em; margin-top: 1em;">
                                         <v-icon left small class="font-weight-bold">account_balance</v-icon>
                                         <span class="body-2 font-weight-bold title">Practise Details </span>
-                                        <v-btn x-small depressed text color="primary" outlined shaped>
+                                        <v-btn x-small depressed text color="primary" outlined shaped class="ml-10">
                                             <v-icon left small>create</v-icon>
                                             <span class="text-capitalize">Edit</span>
                                         </v-btn>
@@ -85,7 +85,7 @@
                                     <div style="margin-bottom: .3em; margin-top: 1em;">
                                         <v-icon left small class="font-weight-bold">history</v-icon>
                                         <span class="body-2 font-weight-bold title">Order Details </span>
-                                        <v-btn x-small depressed text color="primary" outlined shaped>
+                                        <v-btn x-small depressed text color="primary" outlined shaped class="ml-10">
                                             <v-icon left small>create</v-icon>
                                             <span class="text-capitalize">Edit</span>
                                         </v-btn>
@@ -121,7 +121,7 @@
                                     <div style="margin-bottom: .3em; margin-top: 1em;">
                                         <v-icon left small class="font-weight-bold">credit_card</v-icon>
                                         <span class="body-2 font-weight-bold title">Order Payment Info </span> 
-                                        <v-btn x-small depressed text color="primary" outlined right>
+                                        <v-btn x-small depressed text color="primary" outlined right class="ml-10">
                                             <v-icon left small>create</v-icon>
                                             <span class="text-capitalize">Edit</span>
                                         </v-btn>
@@ -176,7 +176,7 @@
                 <!-- Column for the description -->
                 <v-col cols="12" md="7" style="margin-top: -1em;">
 
-                    <v-card class="description" flat hover>
+                    <v-card class="description" flat>
                         <v-card-title class="cyan lighten-2">
                             <v-icon left class="font-weight-bold white--text">note</v-icon>
                             <span class="body-2 white--text font-weight-bold">Order Description</span>
