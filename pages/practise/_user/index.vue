@@ -8,14 +8,43 @@
             <v-row>
                 <!-- Column for the details -->
                 <v-col cols="12" md="5">
-                    <v-card flat hover class="project">
-                        <v-img
-      class="white--text align-end"
-      height="200px"
-      src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-    >
-      <v-card-title>Top 10 Australian beaches</v-card-title>
-    </v-img>
+                    <v-row>
+                        <v-col cols="12" md="4">
+                            <v-avatar right size="150" class="mb-2">
+                                <img src="/images/avatar-1.png" class="grey lighten-1">
+                            </v-avatar>
+                        </v-col>
+
+                        <v-col cols="12" md="8" class="mt-7">
+                            <div style="margin-bottom: .1em;" class="ml-7">
+                                <v-icon small>account_balance</v-icon>
+                                <span class="caption option grey--text" style="text-decoration: underline;">Practitioner Type: </span> 
+                                <p class="caption answer ml-9 orange--text"> Freelance Practitioner </p>
+                            </div>
+                            <div style="margin-top: -1em;" class="ml-7">
+                                <v-icon small>star</v-icon>
+                                <span class="caption option grey--text" style="text-decoration: underline">Platform Rating: </span> 
+                                <v-rating
+                                    :value="rating"
+                                    readonly
+                                    background-color="grey"
+                                    color="orange"
+                                    small
+                                    dense
+                                    half-increments
+                                    class="ml-8"
+                                ></v-rating>
+                            </div>
+                            <div style="margin-bottom: .1em;" class="ml-7">
+                                <v-icon small>military_tech</v-icon>
+                                <span class="caption option grey--text" style="text-decoration: underline;">Platform Rank: </span> 
+                                <p class="caption answer ml-9 orange--text"> GOLD </p>
+                            </div>
+                        </v-col>
+                    </v-row>
+
+                    <v-card flat class="project" color="#f7f8fb">
+                       
                         <v-card-text class="text-left ml-5 pl-5">
                             <v-cols cols="12" md="6">
                                 <div>
@@ -182,6 +211,7 @@ export default {
   layout: "loggedInLayout",
     data: () => ({
         menu: false,
+        rating: 3.3,
         description: "",
         // payment
         payment: {
@@ -295,5 +325,6 @@ export default {
         color: #078686;; 
         text-decoration: underline
     }
+
 
 </style>
