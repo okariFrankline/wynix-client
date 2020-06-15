@@ -5,55 +5,165 @@
         
      
         <!-- content of the dashboard -->
-        <v-container class="mt-1" >
+        <v-container >
             <v-row>
                 <!-- Column for the details -->
-                <v-col cols="12" md="4">
-                       <h1 class="subtitle-1 grey--text my-5">
-                            <v-icon left class="grey--text">business_center</v-icon>
-                            <span>
-                                {{ `Details for order ${this.$route.params.order}` }}
-                            </span>
-                        </h1>
+                <v-col cols="12" md="5">
+                      
 
-                    <v-card flat>
-                        <v-card-title class="grey dense">
-                            <span class="caption">Order Summary</span>
-                        </v-card-title>
+                    <v-card flat hover class="project">
+                        <v-card-text class="text-left ml-5 pl-5">
+                            <v-cols cols="12" md="6">
+                                <div>
+                                    <div style="margin-bottom: .3em; margin-top: 1em;">
+                                        <v-icon left small class="font-weight-bold">subject</v-icon>
+                                        <span class="body-2 font-weight-bold title">Order Overview </span>
+                                        <v-btn x-small depressed text color="primary" outlined shaped>
+                                            <v-icon left small>create</v-icon>
+                                            <span class="text-capitalize">Edit</span>
+                                        </v-btn>
+                                    </div>
+                                    <!-- Full Name -->
+                                    <div style="margin-bottom: .1em;">
+                                        <span class="caption option error--text"><span class="grey--text mr-1 ml-2">-</span>Order Code: </span> 
+                                        <span class="caption answer"> {{overview.orderCode}} </span>
+                                    </div>
 
-                        <v-card-text>
-                            <div>
-                                <div class="caption grey--text font-italic">Order Type</div>
-                                <div class="caption mt-2 font-weight-bold blue--text tex-lighten-2">
-                                    Mobile App Development
+                                    <!-- Birth date -->
+                                    <div style="margin-bottom: .1em;">
+                                        <span class="caption option error--text"><span class="grey--text mr-1 ml-2">-</span>Order Type: </span> 
+                                        <span class="caption answer"> Long Term Contract </span>
+                                    </div>
+
+                                    <!-- Accepting Bids -->
+                                    <div style="margin-bottom: .1em;">
+                                        <span class="caption option error--text"><span class="grey--text mr-1 ml-2">-</span>Order Category: </span> 
+                                        <span class="caption answer"> Mobile App Development </span>
+                                    </div>
+
+                                    <!-- Nationality -->
+                                    <div style="margin-bottom: .1em;">
+                                        <span class="option error--text"><span class="grey--text mr-1 ml-2">-</span>Order Status: </span> 
+                                        <span class="answer"> Unpublished </span>
+                                    </div>
                                 </div>
-                            </div>
+                                
+                                <div>
+                                    <div style="margin-bottom: .3em; margin-top: 1em;">
+                                        <v-icon left small class="font-weight-bold">history</v-icon>
+                                        <span class="body-2 font-weight-bold title">Order Details </span>
+                                        <v-btn x-small depressed text color="primary" outlined shaped>
+                                            <v-icon left small>create</v-icon>
+                                            <span class="text-capitalize">Edit</span>
+                                        </v-btn>
+                                    </div>
+                                    
+                                     <!-- Nationality -->
+                                    <div style="margin-bottom: .1em;">
+                                        <span class="option error--text"><span class="grey--text mr-1 ml-2">-</span>Bidding/Submission Deadline: </span> 
+                                        <span class="answer"> 22nd October 2020 </span>
+                                    </div>
 
-                            <div>
-                                <div class="caption grey--text font-italic">Order Type</div>
-                                <div class="caption mt-2 font-weight-bold blue--text tex-lighten-2">
-                                    Mobile App Development
+                                    <!-- Nationality -->
+                                    <div style="margin-bottom: .1em;">
+                                        <span class="option error--text"><span class="grey--text mr-1 ml-2">-</span>Order Length: </span> 
+                                        <span class="answer"> ~ 3 Months </span>
+                                    </div>
+
+                                    <!-- Nationality -->
+                                    <div style="margin-bottom: .1em;">
+                                        <span class="option error--text"><span class="grey--text mr-1 ml-2">-</span>Contractors Needed: </span> 
+                                        <span class="answer"> 1  </span>
+                                    </div>
+
+                                    <!-- Nationality -->
+                                    <div style="margin-bottom: .1em;">
+                                        <span class="option error--text"><span class="grey--text mr-1 ml-2">-</span>Proposal Required: </span> 
+                                        <span class="answer"> Yes </span>
+                                    </div>
                                 </div>
-                            </div>
+
+                                <!-- Payment information -->
+                                <div>
+                                    <div style="margin-bottom: .3em; margin-top: 1em;">
+                                        <v-icon left small class="font-weight-bold">credit_card</v-icon>
+                                        <span class="body-2 font-weight-bold title">Order Payment Info </span> 
+                                        <v-btn x-small depressed text color="primary" outlined right>
+                                            <v-icon left small>create</v-icon>
+                                            <span class="text-capitalize">Edit</span>
+                                        </v-btn>
+                                    </div>
+
+
+                                    <!-- Birth date -->
+                                    <div style="margin-bottom: .1em;">
+                                        <span class="option error--text"><span class="grey--text mr-1 ml-2">-</span> Payable Amount: </span> 
+                                        <span class="answer"> KES 40000 </span>
+                                    </div>
+
+                                    <!-- Nationality -->
+                                    <div style="margin-bottom: .1em;">
+                                        <span class="option error--text text-lighten-2"> <span class="grey--text mr-1 ml-2">-</span> Payment At: </span> 
+                                        <span class="answer "> End of contract </span>
+                                    </div>
+                                </div>
+                            </v-cols>
                         </v-card-text>
+
+                        <v-card-actions>
+                            <v-btn fab icon x-small dark color="primary" @click="viewBids">
+                                <v-icon small>visibility</v-icon>
+                            </v-btn>
+
+                            <v-btn fab icon x-small dark color="pink" @click="publishOrder">
+                                <v-icon small >publish</v-icon>
+                            </v-btn>
+
+                            <v-btn fab icon dark x-small color="red" @click="cancelOrder">
+                                <v-icon class="font-weight-bold">close</v-icon>
+                            </v-btn>
+
+                            <v-spacer></v-spacer>
+                            <v-btn fab icon x-small dark color="red" @click="shareOrder">
+                                <v-icon class="font-weight-bold">share</v-icon>
+                            </v-btn>
+
+                            <v-btn fab icon x-small dark color="red" @click="submitProposal">
+                                <v-icon class="font-weight-bold">upgrade</v-icon>
+                            </v-btn>
+
+                            <v-btn x-small icon fab dark color="primary" @click="placeBid">
+                                <v-icon>login</v-icon>
+                            </v-btn>
+                        </v-card-actions>
                     </v-card>
                 </v-col>
                 <!-- End of colum for details -->
 
                 <!-- Column for the description -->
-                <v-col cols="12" md="8">
-                    <v-card-title 
-                            
-                        class="teal accent-4 ">
-                        <span class="caption white--text font-weight-bold">Order Summary</span>
-                    </v-card-title>
-                    <v-card class="overflow-y-auto grey lighten-4" flat max-height="450" hover>
+                <v-col cols="12" md="7" style="margin-top: -1em;">
+
+                    <v-card class="description" flat hover>
+                        <v-card-title class="cyan lighten-2">
+                            <v-icon left class="font-weight-bold white--text">note</v-icon>
+                            <span class="body-2 white--text font-weight-bold">Order Description</span>
+
+                            <v-spacer></v-spacer>
+                            <v-btn x-small dark color="white" icon>
+                                <v-icon color="white">create</v-icon>
+                            </v-btn>
+                        </v-card-title>
                         <v-card-text 
-                            class="pa-2"
+                            class="px-2 pt-3 font-weight-normal"
+                            style="color: grey;"
                         >
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio repellat reprehenderit, fugit dolores natus molestiae molestias exercitationem eligendi? Dolores nemo dolorem iusto, quasi saepe architecto amet nam, illo beatae sequi ipsam, corporis suscipit commodi illum ea iste sapiente! Quia ratione alias porro aperiam iusto repellat sed ipsa consequuntur ducimus aut illo fugit, cumque quidem asperiores maxime dolore nobis consectetur a cupiditate adipisci? Impedit, consequuntur. Nesciunt iusto expedita natus alias enim vel assumenda provident non recusandae porro rem neque quidem deleniti nostrum fugiat ea quibusdam similique minima, quod voluptas officia. Aut minus tenetur, laborum quam doloremque necessitatibus, voluptatibus accusantium debitis, ipsum reprehenderit est autem! Vero nobis aliquam harum similique aspernatur exercitationem porro, sapiente alias dolor iure perspiciatis fugit, aperiam ducimus voluptatum totam corrupti quo. Ratione suscipit totam unde velit maxime, illo labore nihil ipsam, accusamus, doloremque ab aliquam! Eaque illo eius quae, ipsam alias sunt cupiditate dicta aliquid maiores provident voluptatibus. Facilis atque totam adipisci sed ipsa, ut maxime rem necessitatibus debitis doloremque, sit mollitia, asperiores ea voluptate. Odio debitis doloribus, aliquam corporis distinctio ullam illum incidunt consequatur numquam nisi vero et nesciunt quidem ipsum. Dolores aspernatur iusto ut unde veritatis eveniet id amet, eius cum nemo dolorem! Earum amet nesciunt quae similique alias, porro quam veniam veritatis aspernatur officiis id atque perferendis repellendus a rem! Aliquam reprehenderit hic, recusandae quas, optio iusto neque, corrupti consequuntur reiciendis vitae molestiae aperiam quis consequatur repudiandae perferendis eveniet earum facilis eos dolore provident? Deserunt, eum culpa unde itaque dolores accusamus et id magnam quis aperiam provident amet totam dolorum iste labore assumenda at nulla nobis omnis corrupti. Obcaecati sit, sequi tempore eum nemo ducimus, soluta impedit vero inventore veritatis commodi fugiat quo. Dolor enim vel impedit nihil soluta non culpa laudantium, voluptatem iste, esse debitis hic placeat sapiente quisquam laborum temporibus mollitia cupiditate quod odit pariatur ipsa fugit est repellendus. Natus ea voluptatum sunt adipisci eveniet fugiat maxime delectus excepturi culpa dicta atque quisquam eum minima repellat animi, deserunt eos rerum exercitationem doloremque ipsa nisi recusandae aliquam voluptate blanditiis! Perspiciatis earum dolorum quam officia enim voluptatibus saepe sunt doloribus, et libero sequi nisi ducimus ut debitis assumenda quidem, cum placeat dicta! Nobis doloremque quisquam, repudiandae et asperiores alias dolor illo, inventore tempore qui ea beatae pariatur earum minus blanditiis atque quos dicta enim architecto incidunt id nulla similique sit est. Dolor, nam assumenda qui rem aliquam facere ex, molestiae magnam cum distinctio odit modi quisquam quia suscipit asperiores iusto est exercitationem ab minima id reiciendis dolorum! Quo excepturi consectetur velit ipsum quis odio voluptates eligendi assumenda corporis. Repellendus exercitationem, sed odit at assumenda quia id aperiam similique, tempore officia officiis deleniti illo sunt qui. Fuga nesciunt commodi placeat quis nam mollitia inventore optio sit provident repellendus consequuntur repellat eaque, vero minus cumque, laborum, veritatis beatae. Delectus sequi similique, amet vitae possimus, beatae pariatur quidem cum quia doloribus voluptatem tempora rem atque impedit, eveniet dolorum? Repellat laudantium fuga incidunt sed minus praesentium quibusdam culpa doloribus recusandae, ad dolorum. Corrupti eaque obcaecati vel voluptatum quam officia2
+                            <p style="color: grey; font-weight: bold;" class="px-3">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus, velit necessitatibus eius deleniti facilis, sequi facere hic dolorem minus, minima odio maiores. Impedit nihil dolore velit non quibusdam, unde modi obcaecati doloremque! Laborum facere voluptatibus, a in blanditiis dolorem reprehenderit iste quo architecto ipsum quod consequuntur? Aut quasi unde pariatur libero incidunt velit. Corporis libero illum voluptatum minima ullam vero facere nemo doloribus voluptates ad repellendus corrupti hic amet quis unde maxime distinctio, ea ex eaque. Nisi eum deserunt dolore deleniti voluptates velit minima, illo perferendis aspernatur vero nemo aliquid quidem corporis sapiente odio quia consequuntur iste obcaecati laborum saepe. Incidunt possimus eum hic. Enim, ex molestias! Praesentium, odio, vitae non molestiae repudiandae quaerat veniam adipisci quo ullam maiores veritatis enim eligendi! Illo assumenda tempora ex optio adipisci, rem voluptate earum quod nemo harum cupiditate aperiam explicabo amet quasi culpa reprehenderit error laudantium provident perspiciatis, doloribus temporibus veniam! Recusandae temporibus laborum obcaecati aliquam ad necessitatibus saepe corporis ipsam alias quam inventore, architecto expedita nihil doloremque tenetur reiciendis, numquam repellat hic? Voluptatibus quia iusto, ipsam modi velit, incidunt officiis, corporis facilis consectetur libero odio repudiandae in a vitae sapiente quos? Veniam qui officia quas. Vel consequuntur numquam quaerat dolores? Hic nemo quidem neque laudantium dolor recusandae officia odit, nobis illum culpa, voluptates accusantium eius fugiat minima aliquam alias sequi doloribus molestias natus ut expedita impedit commodi assumenda deleniti? Maiores cupiditate fuga nesciunt ex ad illo sapiente asperiores amet error ipsam, nam eveniet facere voluptas deserunt dolores, quas debitis totam officiis cumque est. Quae rerum possimus ipsa ipsam quo, perferendis, soluta ullam tenetur provident praesentium, exercitationem illum voluptas numquam eos enim dolor eius incidunt velit voluptatum! Voluptatum perferendis porro delectus molestiae excepturi aspernatur magnam dolore maiores alias, reprehenderit enim perspiciatis voluptatibus blanditiis tenetur impedit quidem. Impedit omnis facilis asperiores odio magni.
+                            </p>
                         </v-card-text>
+                        
                     </v-card>
+                    
                 </v-col>
                 <!-- End of column for the description -->
 
@@ -69,6 +179,25 @@ export default {
     data: () => ({
         menu: false,
         description: "",
+        // payment
+        payment: {
+            payableAmount: "ksh 50000",
+            
+        },
+        //summary
+        summary: {
+            category: "IT & Software Development",
+            contractLength: "~ 2 weeks",
+            skillLevel: "Intermediate",
+            contractorsNeeded: 5
+        },
+        //overview
+        overview: {
+            orderCode: "B4t3iE",
+            owner: "Frankline Okari",
+            bidNumber: 50,
+            acceptingBids: "Yes"
+        },
     }),
     methods: {
 
@@ -94,10 +223,37 @@ export default {
             this.projects = sorted_by_category
         },
 
-        onScroll (e) {
-            e.target.scrollTop
+        // placebid function
+        placeBid() {
+            alert("Bid Placed")
         },
 
+        // view Bids
+        viewBids() {
+            this.$router.push({
+                path: `/orders/${this.$route.params.order}/bids`
+            })
+        },
+
+        // shareOrder
+        shareOrder() {
+            alert("Sharing Order")
+        },
+
+        // publish Order
+        publishOrder() {
+            alert("Order published")
+        },
+
+        // cancel Order
+        cancelOrder() {
+            alert("Order cancelled")
+        },
+
+        // submit proposal
+        submitProposal() {
+            alert("Proposal Submitted.")
+        }
     },
 }
 </script>
@@ -105,7 +261,35 @@ export default {
 
 <style scoped>
     .project {
-        border-bottom: 5px solid #00BFA5 !important;    
+        border-bottom: 4px solid #4DD0E1 !important;    
+        border-top: 4px solid #4DD0E1 !important;
+
+    }
+    .description {
+        border-bottom: 4px solid #4DD0E1 !important;    
+    }
+    .answer {
+       font-weight: bolder; 
+       color: grey; 
+       font-size: .8rem;
+       margin-left: -.6em;
+    }
+
+    .option {
+        font-weight: bolder; 
+        margin-right: 1em; 
+        font-size: .8rem;
+        color: #ae4a1f; 
+        margin-left: .7em;
+        
+    }
+
+    .title {
+        font-weight: bolder; 
+        margin-right: 1em; 
+        font-size: .9rem; 
+        color: #078686;; 
+        text-decoration: underline
     }
 
 </style>
