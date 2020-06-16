@@ -48,7 +48,7 @@
                 <v-select
                     v-model="peopleSelected"
                     :items="services"
-                    box
+                    filled
                     prepend-icon="sort"
                     chips
                     color="blue-grey lighten-2"
@@ -63,7 +63,7 @@
                         slot-scope="data"
                     >
                         <v-chip
-                            :selected="data.selected"
+                            :input-value="data.selected"
                             close
                             class="chip--select-multi"
                             @input="remove(data.item)"
@@ -79,13 +79,13 @@
                     >
                         <!-- Divider and Header-->
                         <template v-if="typeof data.item !== 'object'">
-                            <v-list-tile-content v-text="data.item"/>
+                            <v-list-item-content v-text="data.item"/>
                         </template>
                         <!-- Normal item -->
                         <template v-else>
-                            <v-list-tile-content>
-                                <v-list-tile-title v-html="data.item.name"/>
-                            </v-list-tile-content>
+                            <v-list-item-content>
+                                <v-list-item-title v-html="data.item.name"/>
+                            </v-list-item-content>
                         </template>
                     </template>
                 </v-select>

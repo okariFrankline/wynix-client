@@ -17,10 +17,9 @@
           v-bind="attrs"
           v-on="on"
           depressed
-          @click="showData"
         >
           <v-icon small left>create</v-icon>
-          <span class="text-capitalize font-weight-bold" style="text-decoration: underline">edit location</span>
+          <span class="text-capitalize font-weight-bold" style="text-decoration: underline">edit service</span>
         </v-btn>
       </template>
 
@@ -36,17 +35,26 @@
         <v-card-text>
             <!-- Form -->
             <v-form class="px-3"> 
+                <!--Order type -->
+                <v-select
+                    :items="types"
+                    label="Select Order type"
+                    prepend-icon="sort"
+                    v-model="formData.order_type"
+                ></v-select>
+                <!-- End of order type -->
+
                 <!-- Phone field -->
                 <v-select
-                    v-model="peopleSelected"
-                    :items="people"
-                    box
+                    v-model="formData.order_category"
+                    :items="categories"
                     chips
+                    prepend-icon="sort"
                     color="blue-grey lighten-2"
                     label="Service Required"
                     item-text="name"
                     item-value="name"
-                    multiple
+
                 >
                     <!-- Template for render selected data -->
                     <template
@@ -54,7 +62,7 @@
                         slot-scope="data"
                     >
                         <v-chip
-                            :selected="data.selected"
+                            :input-value="data.selected"
                             close
                             class="chip--select-multi"
                             @input="remove(data.item)"
@@ -74,9 +82,9 @@
                         </template>
                         <!-- Normal item -->
                         <template v-else>
-                            <v-list-tile-content>
-                                <v-list-tile-title v-html="data.item.name"/>
-                            </v-list-tile-content>
+                            <v-list-item-content>
+                                <v-list-item-title v-html="data.item.name"/>
+                            </v-list-item-content>
                         </template>
                     </template>
                 </v-select>
@@ -93,6 +101,7 @@
                         @click="dialog = false"
                     >
                         <v-icon left small class="error--text">close</v-icon>
+                        <span class="text-capitalize error--text">close</span>
                     </v-btn>
 
                     <v-spacer></v-spacer>
@@ -122,23 +131,23 @@
 <script>
 //import format from "date-fns/format"
   export default {
-    name: "ServicesPopup",
+    name: "OrderService",
     // data
     data: () => ({
         // dialog control
         dialog: false,
         // form data
         formData: {
-            city: "",
-            country: "",
-            outside_operation: ""
+            order_category: "",
+            order_type: "",
         },
         // items
-        items: [
-            "Yes",
-            "No"
+        types: [
+            "Long Term Contract",
+            "Medium Term Contract",
+            "Short Term Contract"
         ],
-        people: [
+        categories: [
             { header: 'Software & IT Services' },
             {
                 name: "Mobile App Development"
@@ -221,10 +230,7 @@
 
     methods: {
         submit() {
-            this.$emit('save-location-data', this.formData)
-        },
-        showData() {
-            console.log(this.city, this.country, this.outside_operation)
+            this.$emit('save-service-data', this.formData)
         },
     }
   }

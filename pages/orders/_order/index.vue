@@ -16,10 +16,6 @@
                                     <div style="margin-bottom: .3em; margin-top: 1em;">
                                         <v-icon left small class="font-weight-bold">subject</v-icon>
                                         <span class="body-2 font-weight-bold title">Order Overview </span>
-                                        <v-btn x-small depressed text color="primary" outlined shaped>
-                                            <v-icon left small>create</v-icon>
-                                            <span class="text-capitalize">Edit</span>
-                                        </v-btn>
                                     </div>
                                     <!-- Full Name -->
                                     <div style="margin-bottom: .1em;">
@@ -44,16 +40,17 @@
                                         <span class="option error--text"><span class="grey--text mr-1 ml-2">-</span>Order Status: </span> 
                                         <span class="answer"> Unpublished </span>
                                     </div>
+
+                                    <OrderServices
+                                        style="margin-left: -18em;"
+                                        @save-service-data="updateServiceDetails"
+                                    />
                                 </div>
                                 
                                 <div>
                                     <div style="margin-bottom: .3em; margin-top: 1em;">
                                         <v-icon left small class="font-weight-bold">history</v-icon>
                                         <span class="body-2 font-weight-bold title">Order Details </span>
-                                        <v-btn x-small depressed text color="primary" outlined shaped>
-                                            <v-icon left small>create</v-icon>
-                                            <span class="text-capitalize">Edit</span>
-                                        </v-btn>
                                     </div>
                                     
                                      <!-- Nationality -->
@@ -79,6 +76,11 @@
                                         <span class="option error--text"><span class="grey--text mr-1 ml-2">-</span>Proposal Required: </span> 
                                         <span class="answer"> Yes </span>
                                     </div>
+
+                                    <OrderDetails
+                                        style="margin-left: -18em;"
+                                        @save-details-data="updateDetails"
+                                    />
                                 </div>
 
                                 <!-- Payment information -->
@@ -86,10 +88,6 @@
                                     <div style="margin-bottom: .3em; margin-top: 1em;">
                                         <v-icon left small class="font-weight-bold">credit_card</v-icon>
                                         <span class="body-2 font-weight-bold title">Order Payment Info </span> 
-                                        <v-btn x-small depressed text color="primary" outlined right>
-                                            <v-icon left small>create</v-icon>
-                                            <span class="text-capitalize">Edit</span>
-                                        </v-btn>
                                     </div>
 
 
@@ -104,6 +102,11 @@
                                         <span class="option error--text text-lighten-2"> <span class="grey--text mr-1 ml-2">-</span> Payment At: </span> 
                                         <span class="answer "> End of contract </span>
                                     </div>
+
+                                    <OrderPayment
+                                        style="margin-left: -18em;"
+                                        @save-payment-data="updatePaymentDetails"
+                                    />
                                 </div>
                             </v-cols>
                         </v-card-text>
@@ -147,9 +150,9 @@
                             <span class="body-2 white--text font-weight-bold">Order Description</span>
 
                             <v-spacer></v-spacer>
-                            <v-btn x-small dark color="white" icon>
-                                <v-icon color="white">create</v-icon>
-                            </v-btn>
+                            <OrderDescription 
+                                @save-description-data="updateDescriptionDetails"
+                            />
                         </v-card-title>
                         <v-card-text 
                             class="px-2 pt-3 font-weight-normal"
@@ -172,8 +175,22 @@
 </template>
 
 <script>
+import OrderDescription from "~/components/order/popups/OrderDescription"
+import OrderServices from "~/components/order/popups/OrderServices"
+import OrderPayment from "~/components/order/popups/OrderPayment"
+import OrderDetails from "~/components/order/popups/OrderDetails"
+
 export default {
-  layout: "loggedInLayout",
+    // layout
+    layout: "loggedInLayout",
+    // components
+    components: {
+        OrderDescription,
+        OrderServices,
+        OrderPayment,
+        OrderDetails
+    },
+    // data
     data: () => ({
         menu: false,
         description: "",
@@ -198,27 +215,21 @@ export default {
         },
     }),
     methods: {
-
-        random_border_class() {
-            const colors = [
-                "orange-borders",
-                "tomato-borders",
-                "lime-borders",
-                "pink-borders"
-            ]
-
-            return colors[Math.floor(Math.random() * colors.length)]
+        // order description
+        updateDescriptionDetails(data) {
+            console.log(data)
         },
-
-        sort_by_category() {
-             // set the snackbar_category to false
-            this.snackbar_category = false
-            // set the category from the form data
-            const category = this.formData.sort_category
-            //this.snackbar_type === true ? false : false 
-            let sorted_by_category = this.projects.filter((project) => project.order_category == category)
-            //console.log(sorted_by_category)
-            this.projects = sorted_by_category
+        // order description
+        updateServiceDetails(data) {
+            console.log(data)
+        },
+        // order description
+        updateDetails(data) {
+            console.log(data)
+        },
+        // order description
+        updatePaymentDetails(data) {
+            console.log(data)
         },
 
         // placebid function
