@@ -68,7 +68,7 @@
                        
                         <v-card-text class="text-left ml-5 pl-5">
                             <v-cols cols="12" md="6">
-                                <div style="margin-left: -2.5em;">
+                                <div style="margin-left: -1em;">
                                     <div style="margin-bottom: .3em; margin-top: .1em;">
                                         <v-icon left small class="font-weight-bold error--text">home_work</v-icon>
                                         <span class="body-2 font-weight-bold title error--text">Practise Account Details </span>
@@ -110,9 +110,11 @@
                                     />
                                     <!-- End of edit button -->
                                 </div>
+
+                                <v-divider class="mt-4" style="margin-left: -3em;"></v-divider>
                                 
                                 <!-- Location Details -->
-                                <div style="margin-left: -2.5em;">
+                                <div style="margin-left: -1em;">
                                     <div style="margin-bottom: .3em; margin-top: 1em;">
                                         <v-icon left small class="font-weight-bold error--text">my_location</v-icon>
                                         <span class="body-2 font-weight-bold title error--text">Practise Location Details </span>
@@ -152,8 +154,10 @@
                                 </div>
                                 <!-- End of the location details -->
 
+                                <v-divider class="mt-4" style="margin-left: -3em;"></v-divider>
+
                                 <!-- Expertise Details -->
-                                <div style="margin-left: -2.5em;">
+                                <div style="margin-left: -1em;">
                                     <div style="margin-bottom: .3em; margin-top: 1em;">
                                         <v-icon left small class="font-weight-bold error--text">credit_card</v-icon>
                                         <span class="body-2 font-weight-bold title error--text">Practise Expertise </span> 
@@ -180,7 +184,7 @@
                                 <v-divider class="mt-4" style="margin-left: -3em;"></v-divider>
 
                                 <!-- Client Comments -->
-                                <div style="margin-left: -3em;">
+                                <div style="margin-left: -2em;">
                                     <div style="margin-bottom: .3em; margin-top: 1em;">
                                         <v-icon left small class="font-weight-bold error--text">chat_bubble_outline</v-icon>
                                         <span class="body-2 font-weight-bold title error--text">What previous clients say </span> 

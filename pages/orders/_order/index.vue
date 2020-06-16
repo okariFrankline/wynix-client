@@ -46,6 +46,8 @@
                                         @save-service-data="updateServiceDetails"
                                     />
                                 </div>
+
+                                <v-divider class="mt-4" style="margin-left: -3em;"></v-divider>
                                 
                                 <div>
                                     <div style="margin-bottom: .3em; margin-top: 1em;">
@@ -82,6 +84,8 @@
                                         @save-details-data="updateDetails"
                                     />
                                 </div>
+
+                                <v-divider class="mt-4" style="margin-left: -3em;"></v-divider>
 
                                 <!-- Payment information -->
                                 <div>

@@ -48,7 +48,6 @@
                 <v-select
                     v-model="peopleSelected"
                     :items="services"
-                    filled
                     prepend-icon="sort"
                     chips
                     color="blue-grey lighten-2"

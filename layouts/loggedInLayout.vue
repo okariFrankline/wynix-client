@@ -1,5 +1,5 @@
 <template>
-  <v-app style="background-color: #f7f8fb !important;">
+  <v-app style="background-color: #EEEEEE !important; min-height: 100vh">
     <!-- Side navigation -->
     <v-navigation-drawer v-model="drawer" app class="grey lighten-2">
         <v-row class="avatar-row mt-1">
