@@ -2,8 +2,6 @@
 <!-- Displays a list of orders owned by a given user -->
 <template>
     <div class="dashboard mt-3" style="margin-bottom: -2em;">
-        
-     
         <!-- content of the dashboard -->
         <v-container >
             <v-row>
