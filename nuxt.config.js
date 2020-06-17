@@ -19,6 +19,10 @@ export default {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css?family=Material+Icons'
       },
+      {
+        rel: "stylesheet",
+        href: "https://unpkg.com/vue-material/dist/vue-material.min.css"
+      }
     ]
   },
   /*
@@ -29,11 +33,19 @@ export default {
   ** Global CSS
   */
   css: [
+    {
+      src: 'vue-material/dist/vue-material.min.css',
+      lang: 'css'
+    }, {
+      src: 'vue-material/dist/theme/default.css',
+      lang: 'css'
+    }
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~plugins/vue-material'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -71,6 +83,9 @@ export default {
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
           success: colors.green.accent3
+        },
+        light: {
+          background: colors.grey.lighten3
         }
       }
     }

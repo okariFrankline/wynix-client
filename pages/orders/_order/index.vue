@@ -9,7 +9,7 @@
                 <v-col cols="12" md="5">
                       
 
-                    <v-card flat hover class="project">
+                    <v-card flat class="project" hover>
                         <v-card-text class="text-left ml-5 pl-5">
                             <v-cols cols="12" md="6">
                                 <div>
@@ -133,13 +133,9 @@
                                 <v-icon class="font-weight-bold">share</v-icon>
                             </v-btn>
 
-                            <v-btn fab icon x-small dark color="red" @click="submitProposal">
-                                <v-icon class="font-weight-bold">upgrade</v-icon>
-                            </v-btn>
+                            <Proposal @save-proposal-data="uploadProposals" />
 
-                            <v-btn x-small icon fab dark color="primary" @click="placeBid">
-                                <v-icon>login</v-icon>
-                            </v-btn>
+                            <Bid @save-bid-data="placeBid" />
                         </v-card-actions>
                     </v-card>
                 </v-col>
@@ -148,7 +144,7 @@
                 <!-- Column for the description -->
                 <v-col cols="12" md="7" style="margin-top: -1em;">
 
-                    <v-card class="description" flat hover>
+                    <v-card class="description" hover flat>
                         <v-card-title class="cyan lighten-2">
                             <v-icon left class="font-weight-bold white--text">note</v-icon>
                             <span class="body-2 white--text font-weight-bold">Order Description</span>
@@ -162,7 +158,7 @@
                             class="px-2 pt-3 font-weight-normal"
                             style="color: grey;"
                         >
-                            <p style="color: grey; font-weight: bold;" class="px-3">
+                            <p style="color: grey;" class="px-3">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus, velit necessitatibus eius deleniti facilis, sequi facere hic dolorem minus, minima odio maiores. Impedit nihil dolore velit non quibusdam, unde modi obcaecati doloremque! Laborum facere voluptatibus, a in blanditiis dolorem reprehenderit iste quo architecto ipsum quod consequuntur? Aut quasi unde pariatur libero incidunt velit. Corporis libero illum voluptatum minima ullam vero facere nemo doloribus voluptates ad repellendus corrupti hic amet quis unde maxime distinctio, ea ex eaque. Nisi eum deserunt dolore deleniti voluptates velit minima, illo perferendis aspernatur vero nemo aliquid quidem corporis sapiente odio quia consequuntur iste obcaecati laborum saepe. Incidunt possimus eum hic. Enim, ex molestias! Praesentium, odio, vitae non molestiae repudiandae quaerat veniam adipisci quo ullam maiores veritatis enim eligendi! Illo assumenda tempora ex optio adipisci, rem voluptate earum quod nemo harum cupiditate aperiam explicabo amet quasi culpa reprehenderit error laudantium provident perspiciatis, doloribus temporibus veniam! Recusandae temporibus laborum obcaecati aliquam ad necessitatibus saepe corporis ipsam alias quam inventore, architecto expedita nihil doloremque tenetur reiciendis, numquam repellat hic? Voluptatibus quia iusto, ipsam modi velit, incidunt officiis, corporis facilis consectetur libero odio repudiandae in a vitae sapiente quos? Veniam qui officia quas. Vel consequuntur numquam quaerat dolores? Hic nemo quidem neque laudantium dolor recusandae officia odit, nobis illum culpa, voluptates accusantium eius fugiat minima aliquam alias sequi doloribus molestias natus ut expedita impedit commodi assumenda deleniti? Maiores cupiditate fuga nesciunt ex ad illo sapiente asperiores amet error ipsam, nam eveniet facere voluptas deserunt dolores, quas debitis totam officiis cumque est. Quae rerum possimus ipsa ipsam quo, perferendis, soluta ullam tenetur provident praesentium, exercitationem illum voluptas numquam eos enim dolor eius incidunt velit voluptatum! Voluptatum perferendis porro delectus molestiae excepturi aspernatur magnam dolore maiores alias, reprehenderit enim perspiciatis voluptatibus blanditiis tenetur impedit quidem. Impedit omnis facilis asperiores odio magni.
                             </p>
                         </v-card-text>
@@ -183,6 +179,8 @@ import OrderDescription from "~/components/order/popups/OrderDescription"
 import OrderServices from "~/components/order/popups/OrderServices"
 import OrderPayment from "~/components/order/popups/OrderPayment"
 import OrderDetails from "~/components/order/popups/OrderDetails"
+import Proposal from "~/components/order/popups/Proposal"
+import Bid from "~/components/order/popups/Bid"
 
 export default {
     // layout
@@ -192,7 +190,9 @@ export default {
         OrderDescription,
         OrderServices,
         OrderPayment,
-        OrderDetails
+        OrderDetails,
+        Proposal,
+        Bid
     },
     // data
     data: () => ({
@@ -233,6 +233,10 @@ export default {
         },
         // order description
         updatePaymentDetails(data) {
+            console.log(data)
+        },
+        // upload proposal
+        uploadProposals(data) {
             console.log(data)
         },
 

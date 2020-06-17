@@ -1,67 +1,26 @@
+<!-- Displays a list of orders owned by a given user -->
 <template>
-    <div class="dashboard">
-        <h1 class="subtitle-1 grey--text">Dashboard</h1>
+    <div class="dashboard mt-3" style="margin-bottom: -2em;">
+        <script src="https://unpkg.com/vue-material"></script>
+        
+        <h1 class="subtitle-1 grey--text mb-5">
+            <v-icon left class="grey--text">credit_card</v-icon>
+            <span>User Dashboard</span>
+        </h1>
 
         <!-- content of the dashboard -->
-        <v-container class="my-5">
-            <!-- Sorting buttons -->
-            <v-row class="mb-3 ml-5">
-                <v-tooltip top>
-                    <template v-slot:activator="{ on, attrs}">
-                        <v-btn text color="gray" v-on="on" v-bind="attrs"> 
-                            <v-icon left small>folder</v-icon>
-                            <span class="text-lowercase caption">By Project</span>
-                        </v-btn>
-                    </template>
-                    
-                    <span>Sort projects by project name</span>
-                </v-tooltip>
-                
+        <v-container class="my-5" >
 
-                <v-tooltip top>
-                    <template v-slot:activator="{on, attrs}"> 
-                        <v-btn text color="gray" v-on="on" v-bind="attrs"> 
-                            <v-icon left small>person</v-icon>
-                            <span class="text-lowercase caption">By Person</span>
-                        </v-btn>
-                    </template>
-                    <span>Sort projects by person</span>
-                </v-tooltip>
-            </v-row>
 
-            <v-card flat hover ripple class="mb-1" v-for="project in projects" :key="project.id" :class="`project ${project.status}`">
-                <v-row class="px-3">
-                    <v-col cols="12" md="6">
-                        <div class="caption grey--text">Project Title</div>
-                        <div class="body-1">
-                            {{ project.title }}
-                        </div>
-                    </v-col>
-
-                    <v-col cols="6" sm="4" md="2">
-                        <div class="caption grey--text">Person</div>
-                        <div>
-                            {{ project.person }}
-                        </div>
-                    </v-col>
-
-                    <v-col cols="6" sm="4" md="2">
-                        <div class="caption grey--text">Due Date</div>
-                        <div>
-                            {{ project.date}}
-                        </div>
-                    </v-col>
-                    
-                    <v-col cols="6" sm="4" md="2">
-                        <div class="right">
-                            <v-chip small class="my-2 white--text" :color="chip_color(project.status)">
-                                {{project.status}}
-                            </v-chip>
-                        </div>
-                    </v-col>
-                </v-row>
-                <v-divider></v-divider>
-            </v-card>
+            
+                <md-empty-state
+                    style="color: red;"
+                    md-icon="devices_other"
+                    md-label="Create your first project"
+                    md-description="Creating project, you'll be able to upload your design and collaborate with people.">
+                    <md-button class="md-primary md-raised">Create first project</md-button>
+                </md-empty-state>
+            
             
         </v-container>
     </div>
@@ -71,35 +30,65 @@
 export default {
   layout: "loggedInLayout",
     data: () => ({
+        formData: {
+            sort_type: "",
+            sort_date: ""
+        },
+        items: [
+            "Order Publishing",
+            "Token Payment",
+            "Order Payment"
+        ],
+        snackbar_type: false,
+        snackbar_date: false,
+        menu: false,
         projects: [
             {   
                 id: 1,
-                title: "Create Website",
-                person: "Frankline Okari",
-                date: "2nd May 20120",
-                status: "ongoing"
+                transaction_type: "Available Orders",
+                recipient: "Wynix.com",
+                transaction_date: "2nd May 20120",
+                status: "complete",
+                transaction_amount: "KES 2000",
+                icon: "business_center"
+            },
+            {   
+                id: 5,
+                transaction_type: "My Bids",
+                recipient: "Wynix.com",
+                transaction_date: "2nd May 20120",
+                status: "ongoing",
+                transaction_amount: "KES 2000",
+                icon: "credit_card"
             },
             {   
                 id: 2,
-                title: "Create Mobile App",
-                person: "Paul Okari",
-                date: "2nd May 20120",
-                status: "complete"
+                transaction_type: "Assigned orders",
+                recipient: "Paul Okari",
+                transaction_date: "2nd May 20120",
+                status: "complete",
+                transaction_amount: "KES 2000",
+                icon: "credit_card"
             },
             {   
                 id: 3,
-                title: "Analyse App Performance",
-                person: "Frankline Njoroge",
-                date: "2nd May 20120",
-                status: "overdue"
+                transaction_type: "My Practise",
+                recipient: "Frankline Njoroge",
+                transaction_date: "2nd May 20120",
+                status: "cancelled",
+                transaction_amount: "KES 2000",
+                icon: "credit_card"
             },
             {   
                 id: 4,
-                title: "Test Website",
-                person: "Donna Njoki",
-                date: "2nd May 20120",
-                status: "ongoing"
-            }
+                transaction_type: "Transaction History",
+                recipient: "Wynix.com",
+                transaction_date: "2nd May 20120",
+                status: "ongoing",
+                transaction_amount: "KES 2000",
+                icon: "credit_card"
+            },
+ 
         ]
     }),
     methods: {
@@ -107,26 +96,48 @@ export default {
             if (status == "complete") {return "#3cd1c2"}
             if (status == "ongoing") {return "orange"}
             return "#f83e70"
+        },
+
+        transaction_class(transaction_type) {
+            if(transaction_type == "Order Publishing") {return "order-publishing"}
+            if(transaction_type == "Order Payment") {return "order-payment"}
+            return "token-payment"
+        },
+        sort_by_date() {
+            console.log(this.formData.sort_date)
+        },
+        sort_by_type() {
+            console.log(this.formData.sort_type)
         }
-    }
+    },
 }
 </script>
 
 <style>
-    .project.complete {
+    .project.order-payment {
         border-left: 4px solid #3cd1c2;
         border-right: 4px solid #3cd1c2;
         border-bottom: 1px solid #3cd1c2;
     }
-    .project.overdue {
+    .project.order-publishing {
         border-left: 4px solid tomato;
         border-right: 4px solid tomato;
         border-bottom: 1px solid tomato;
         
     }
-    .project.ongoing {
+    .project.token-payment {
         border-left: 4px solid orange;
         border-right: 4px solid orange;
         border-bottom: 1px solid orange;
+    }
+    .code {
+        color: maroon;
+        font-size: 1rem;
+        font-weight: bolder;
+    }
+    .answer {
+        color: #4A5806;
+        font-size: 1rem;
+        font-weight: bolder;
     }
 </style>
