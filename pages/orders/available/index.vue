@@ -12,7 +12,7 @@
         <v-container class="my-5" >
 
             <md-empty-state
-            md-rounded
+                md-rounded
                 v-if="projects.length == 0"
                 style="margin-top: -1em;"
                 class="grey--text"

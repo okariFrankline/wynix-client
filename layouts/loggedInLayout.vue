@@ -13,31 +13,110 @@
       </v-toolbar>
 
       <!-- list of links aound the app -->
-        <v-list dense>
+        <v-list dense subheader rounded>
+           
+
+          <v-subheader inset style="margin-left: -.1em;">
+            <span class="font-weight-bold body-2">Orders</span>
+          </v-subheader>
           <!-- TO available orders -->
           <v-list-item nuxt to="/orders/available" style="text-decoration: none;">
             <v-list-item-action>
-              <v-icon>business_center</v-icon>
+              <v-icon small>launch</v-icon>
             </v-list-item-action>
             <v-list-item-content>
               <v-list-item-title>
-                Available Orders
+                Browse Contracts
+              </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          <!-- End of available orders -->
+
+          <v-divider class="mt-3"></v-divider>
+          <!-- End of available orders -->
+          <v-subheader inset style="margin-left: -.1em;">
+            <span class="font-weight-bold body-2">Practise</span>
+          </v-subheader>
+          <!-- TO available orders -->
+          <v-list-item nuxt to="/practise/frank" style="text-decoration: none;" exact>
+            <v-list-item-action>
+              <v-icon small>launch</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>
+                My Practise
               </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
           <!-- End of available orders -->
 
           <!-- TO available orders -->
-          <v-list-item >
- 
+          <v-list-item nuxt to="/orders/available" style="text-decoration: none">
+            <v-list-item-action>
+              <v-icon small>subject</v-icon>
+            </v-list-item-action>
             <v-list-item-content>
               <v-list-item-title>
-               <OrderServices /> 
+                Assigned Orders
               </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
           <!-- End of available orders -->
+
+          <!-- TO available orders -->
+          <v-list-item nuxt to="/practise/frank/bids" style="text-decoration: none">
+            <v-list-item-action>
+              <v-icon small>playlist_add_check</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>
+                My Bids
+              </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          <!-- End of available orders -->
+
+          
+
+          <v-divider class="mt-2"></v-divider>
+
+          <v-subheader inset style="margin-left: -.1em;">
+            <span class="font-weight-bold body-2">Transactions</span>
+          </v-subheader>
+          <!-- TO available orders -->
+          <v-list-item nuxt to="/transaction/frank" style="text-decoration: none">
+            <v-list-item-action>
+              <v-icon small>receipt_long</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>
+                My Tokens
+              </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          <!-- End of available orders -->
+
+          <!-- TO available orders -->
+          <v-list-item nuxt to="/transaction/frank" style="text-decoration: none">
+            <v-list-item-action>
+              <v-icon small>history</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>
+                History
+              </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          <!-- End of available orders -->
+          
+
         </v-list>
+
+        <template v-slot:append>
+        <div class="pa-2">
+          <NewOrder />
+        </div>
+      </template>
       <!-- end of lis of links -->
     </v-navigation-drawer>
     <!--  End of side navigation bar -->
@@ -49,7 +128,9 @@
         
         <!-- Application brand -->
         <v-toolbar-title>
-          <v-icon left small>account_circle</v-icon>
+          <v-avatar class="mr-3 ml-n3 elevation-2">
+            <img src="/images/person.jpg" class="grey lighten-2">
+          </v-avatar>
           <span class="font-weight-bold body-2 white--text tex-darken-4">Okarifrank</span>
         </v-toolbar-title>
         <!-- End of appication brand -->
@@ -79,11 +160,11 @@
 
 <!-- Script for the loggedInLayout -->
 <script>
-  import OrderServices from "~/components/order/popups/OrderServices"
+  import NewOrder from "~/components/order/New/NewOrder"
   export default {
       // name
       name: "LoggedInLayout",
-      components: {OrderServices},
+      components: {NewOrder},
       // data
       data: () => ({
           
