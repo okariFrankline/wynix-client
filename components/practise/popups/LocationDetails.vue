@@ -19,7 +19,6 @@
           depressed
           @click="showData"
         >
-          <v-icon small left>create</v-icon>
           <span class="text-capitalize font-weight-bold caption" style="text-decoration: underline">edit location</span>
         </v-btn>
       </template>

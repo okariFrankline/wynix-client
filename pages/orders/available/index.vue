@@ -76,6 +76,7 @@
                     :class="random_border_class()" 
                     nuxt 
                     :to="`${project.id}`"
+                    
                 >
                     <v-row class="px-3">
                         <v-col cols="12" md="4">

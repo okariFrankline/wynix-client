@@ -1,4 +1,4 @@
-<!-- Displays form for editing and creating new account details -->
+<!-- Displays form for editing and creating new location details -->
 <template>
   <div class="text-center">
     <v-dialog
@@ -9,16 +9,15 @@
 
       <template v-slot:activator="{ on, attrs }">
         <v-btn
-          color="white"
-          dark
-          text
-          outlined
-          small
+          dark 
+          small 
+          fab 
+          color="pink accent-2"
           v-bind="attrs"
           v-on="on"
           depressed
         >
-          <span class="text-capitalize font-weight-bold caption" style="text-decoration: underline">edit description</span>
+            <v-icon class="font-weight-bold">mdi-plus</v-icon>
         </v-btn>
       </template>
 
@@ -27,22 +26,29 @@
           class="body-1 teal accent-4"
           primary-title
         >
-          <span class="white--text caption">Update Practise Details</span>
+          <span class="white--text">Add Item to catalog</span>
         </v-card-title>
 
         <!-- content for the pop up -->
         <v-card-text>
             <!-- Form -->
             <v-form class="px-3"> 
-                <!-- Phone field -->
-                <v-textarea 
-                    label="Type Practise Description and Selling Points" 
-                    v-model="formData.description" 
-                    prepend-icon="edit"
-                ></v-textarea>
-                <!-- End of email field -->
-
+                <!-- Description for the image -->
+                <v-text-field
+                    label="Item Description"
+                    v-model="formData.description"
+                    prepend-icon="description"
+                ></v-text-field>
+                <!-- Order length -->
+                <v-file-input 
+                    small-chips 
+                    prepend-icon="add_photo_alternate"
+                    label="Upload Catalog Image"
+                ></v-file-input>
+                <!-- End of order length -->
+            
                 <v-row>
+                    <!-- Cancel Button -->
                     <v-btn 
                         dark
                         small
@@ -52,10 +58,12 @@
                         @click="dialog = false"
                     >
                         <v-icon left small class="error--text">close</v-icon>
-                        <span class="text-capitalize error--text">close</span>
+                        <span class="text-capitalize error--text">cancel</span>
                     </v-btn>
 
                     <v-spacer></v-spacer>
+
+                    <!-- Submit button -->
                     <v-btn 
                         dark
                         small
@@ -68,6 +76,7 @@
                         <span class="text-capitalize success--text">submit</span>
                         <v-icon right small class="success--text">send</v-icon>
                     </v-btn>
+                    <!-- End of the submit button -->
                 </v-row>
             </v-form>
         </v-card-text>
@@ -79,24 +88,25 @@
 <script>
 //import format from "date-fns/format"
   export default {
-    name: "AccountDetailsPopup",
+    name: "ItemForm",
     // data
     data: () => ({
         // dialog control
         dialog: false,
+        // menu
+        menu: false,
         // form data
         formData: {
             description: "",
-        }
-    }),
+            item: ""
+        },
 
-    computed: {
-    },
+    }),
 
     methods: {
         submit() {
-            this.$emit('save-description-data', this.formData)
-        }
+            this.$emit('save-catalog-data', this.formData)
+        },
     }
   }
 </script>

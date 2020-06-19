@@ -18,7 +18,6 @@
           v-on="on"
           depressed
         >
-          <v-icon small left>edit</v-icon>
           <span class="text-capitalize font-weight-bold caption" style="text-decoration: underline">edit account</span>
         </v-btn>
       </template>

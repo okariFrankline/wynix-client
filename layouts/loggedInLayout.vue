@@ -20,7 +20,7 @@
             <span class="font-weight-bold body-2">Orders</span>
           </v-subheader>
           <!-- TO available orders -->
-          <v-list-item nuxt to="/orders/available" style="text-decoration: none;" exact>
+          <v-list-item nuxt to="/orders/available" style="text-decoration: none;" exact class="mt-n2">
             <v-list-item-action>
               <v-icon small>launch</v-icon>
             </v-list-item-action>
@@ -38,7 +38,7 @@
             <span class="font-weight-bold body-2">Practise</span>
           </v-subheader>
           <!-- TO available orders -->
-          <v-list-item nuxt to="/practise/frank" style="text-decoration: none;" exact>
+          <v-list-item nuxt to="/practise/frank" style="text-decoration: none;" exact class="mt-n2">
             <v-list-item-action>
               <v-icon small>launch</v-icon>
             </v-list-item-action>
@@ -51,7 +51,7 @@
           <!-- End of available orders -->
 
           <!-- TO available orders -->
-          <v-list-item nuxt to="/practise/frank/assigned" style="text-decoration: none" exact>
+          <v-list-item nuxt to="/practise/frank/assigned" style="text-decoration: none" exact class="mt-n2">
             <v-list-item-action>
               <v-icon small>subject</v-icon>
             </v-list-item-action>
@@ -64,13 +64,26 @@
           <!-- End of available orders -->
 
           <!-- TO available orders -->
-          <v-list-item nuxt to="/practise/frank/bids" style="text-decoration: none">
+          <v-list-item nuxt to="/practise/frank/bids" style="text-decoration: none" class="mt-n2">
             <v-list-item-action>
               <v-icon small>playlist_add_check</v-icon>
             </v-list-item-action>
             <v-list-item-content>
               <v-list-item-title>
                 My Bids
+              </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          <!-- End of available orders -->
+
+          <!-- TO available orders -->
+          <v-list-item nuxt to="/practise/frank/catalog" style="text-decoration: none" class="mt-n2" exact>
+            <v-list-item-action>
+              <v-icon small>photo_library</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>
+                My Catalog
               </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
@@ -84,7 +97,7 @@
             <span class="font-weight-bold body-2">Transactions</span>
           </v-subheader>
           <!-- TO available orders -->
-          <v-list-item nuxt to="/practise/frank/tokens" style="text-decoration: none" exact>
+          <v-list-item nuxt to="/practise/frank/tokens" style="text-decoration: none" exact class="mt-n2">
             <v-list-item-action>
               <v-icon small>receipt_long</v-icon>
             </v-list-item-action>
@@ -97,7 +110,7 @@
           <!-- End of available orders -->
 
           <!-- TO available orders -->
-          <v-list-item nuxt to="/transaction/frank" style="text-decoration: none">
+          <v-list-item nuxt to="/transaction/frank" style="text-decoration: none" class="mt-n2">
             <v-list-item-action>
               <v-icon small>history</v-icon>
             </v-list-item-action>

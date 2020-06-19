@@ -11,52 +11,20 @@
         <v-container class="my-5" >
             <!-- Sorting buttons -->
             <v-row class="mb-3 mx-5">
-                <!-- Button for reloading all -->
                 <div>
-                    <v-btn color="blue" text @click="reload">
-                        <v-icon left small>restore</v-icon>
-                        <span class="text-lowercase caption font-weight-bold">Reload all</span>
-                    </v-btn>
-                </div>
-                <!-- End of button for reloading all -->
-                <!-- Button for displaying the sort date -->
-                <div>
-                    <v-menu
-                        :close-on-content-click="true"
-                        transition="scale-transition"
-                        offset-y
-                        max-width="290px"
-                        min-width="290px"
-                        >
-                        <template v-slot:activator="{ on, attrs }">
-                            <v-btn text color="pink accent-2" v-on="on" v-bind="attrs"> 
-                                <v-icon left class="font-weight-bold" small>sort</v-icon>
-                                <span class="text-capitalize caption font-weight-bold">filter by date</span>
-                            </v-btn>
-                        </template>
-                        <v-date-picker no-title v-model="sort_date" @input="sort_by_date" ></v-date-picker>
-                    </v-menu>
-                </div>
-                <!-- End of button for displaying the sort date -->
-
-                <!-- Button for displaying the sort date -->
-                    <div>
-                        <v-btn text color="teal accent-5"  @click="snackbar = !snackbar"> 
-                            <v-icon small left>sort</v-icon>
-                            <span class="text-lowercase caption font-weight-bold">Filter By category</span>
-                        </v-btn>
-                        <v-snackbar v-model="snackbar" top color="#f7f8fb" timeout=15000>
-                            <v-select
-                                dense
-                                :items="statuses"
-                                prepend-icon="filter_alt"
-                                placeholder="Choose Bid Status"
-                                v-model="formData.status"
-                            ></v-select>
-                            <v-btn depressed small class="teal accent-5" dark @click="sort_by_status">Sort</v-btn>
-                        </v-snackbar>
+                        <span class="teal--text text-accent-5 font-weight-bold mr-2 caption">Rejected:</span> 
+                        <span class="pink--text text-accent-2 font-weight-bold caption ml-n1">3</span>
                     </div>
-                    <!-- End of button for displaying the sort date -->
+
+                    <div>
+                        <span class="teal--text text-accent-5 font-weight-bold mr-2 caption ml-3">Pending:</span> 
+                        <span class="pink--text text-accent-2 font-weight-bold caption ml-n1">4</span>
+                    </div>
+
+                    <div>
+                        <span class="teal--text text-accent-5 font-weight-bold mr-2 caption ml-3">Accepted:</span> 
+                        <span class="pink--text text-accent-2 font-weight-bold caption ml-n1">1</span>
+                    </div>
 
                 <!-- End of button for displaying the button for displaying snackbar for type field -->
 

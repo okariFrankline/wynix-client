@@ -18,7 +18,7 @@
                 <div>
                     <v-btn text color="pink accent-2"  @click="() => this.$router.back()"> 
                         <v-icon small left class="font-weight-bold">undo</v-icon>
-                        <span class="text-lowercase body-2 font-weight-bold font-italic">back to order</span>
+                        <span class="text-lowercase caption font-weight-bold">back to order</span>
                     </v-btn>
                 </div>
                 <!-- End of button for displaying the button for displaying snackbar for type field -->
@@ -26,8 +26,8 @@
                 <v-spacer></v-spacer>
 
                 <div>
-                    <span class="teal--text text-accent-5 font-weight-bold mr-2 subtitle font-italic">Payable Amount:</span> 
-                    <span class="pink--text text-accent-2 font-weight-bold body-2 font-italic">
+                    <span class="teal--text text-accent-5 font-weight-bold mr-2 caption">Payable Amount:</span> 
+                    <span class="pink--text text-accent-2 font-weight-bold caption">
                         KES 50000
                     </span>
                 </div>

@@ -9,11 +9,11 @@
                 <v-col cols="12" md="5">
                       
 
-                    <v-card flat class="project" hover>
+                    <v-card flat class="project" color="#f7f8fb">
                         <v-card-text class="text-left ml-5 pl-5">
                             <v-cols cols="12" md="6">
                                 <div>
-                                    <div style="margin-bottom: .3em; margin-top: 1em;">
+                                    <div style="margin-bottom: .3em;">
                                         <v-icon left small class="font-weight-bold">subject</v-icon>
                                         <span class="body-2 font-weight-bold title caption">Order Overview </span>
                                     </div>
@@ -144,7 +144,7 @@
                 <!-- Column for the description -->
                 <v-col cols="12" md="7" style="margin-top: -1em;">
 
-                    <v-card class="description" hover flat>
+                    <v-card class="description" flat color="#f7f8fb">
                         <v-card-title class="cyan lighten-2">
                             <v-icon left class="font-weight-bold white--text">note</v-icon>
                             <span class="caption white--text font-weight-bold">Order Description</span>
