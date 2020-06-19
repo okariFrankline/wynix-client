@@ -36,7 +36,7 @@
                             <template v-slot:activator="{ on, attrs }">
                                 <v-btn text color="pink accent-2" v-on="on" v-bind="attrs"> 
                                 <v-icon left small>sort</v-icon>
-                                <span class="text-lowercase body-2 font-weight-bold font-italic">By Date</span>
+                                <span class="text-lowercase caption font-weight-bold">filter By Date</span>
                             </v-btn>
                             </template>
                             <v-date-picker v-model="formData.sort_date" no-title @input="sort_by_date" ></v-date-picker>
@@ -49,7 +49,7 @@
                         
                         <v-btn text color="teal accent-5"  @click="snackbar_type = !snackbar_type"> 
                             <v-icon small left>sort</v-icon>
-                            <span class="text-lowercase body-2 font-weight-bold font-italic">By Type</span>
+                            <span class="text-lowercase caption font-weight-bold">filter By Type</span>
                         </v-btn>
                         <v-snackbar v-model="snackbar_type" top color="white">
                             <v-select
@@ -66,8 +66,8 @@
                     <v-spacer></v-spacer>
 
                     <div>
-                        <span class="teal--text text-accent-5 font-weight-bold mr-2 body-1">user code:</span> 
-                        <span class="pink--text text-accent-2 font-weight-bold body-2">JkI7e3</span>
+                        <span class="teal--text text-accent-5 font-weight-bold mr-2 caption">user code:</span> 
+                        <span class="pink--text text-accent-2 font-weight-bold caption">JkI7e3</span>
                     </div>
     
                 </v-row>

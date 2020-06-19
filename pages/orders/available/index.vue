@@ -28,7 +28,7 @@
                     <div>
                         <v-btn text color="pink accent-2"  @click="toggle_category_snackbar"> 
                             <v-icon small left>sort</v-icon>
-                            <span class="text-lowercase body-2 font-weight-bold font-italic">Filter By category</span>
+                            <span class="text-lowercase caption font-weight-bold">Filter By category</span>
                         </v-btn>
                         <v-snackbar v-model="snackbar_category" top color="#f7f8fb">
                             <v-select
@@ -48,7 +48,7 @@
                         
                         <v-btn text color="teal accent-5"  @click="toggle_type_snackbar"> 
                             <v-icon small left>sort</v-icon>
-                            <span class="text-lowercase body-2 font-weight-bold font-italic">Filter By Type</span>
+                            <span class="text-lowercase caption font-weight-bold">Filter By Type</span>
                         </v-btn>
                         <v-snackbar v-model="snackbar_type" top color="#f7f8fb">
                             <v-select
@@ -66,8 +66,8 @@
                     <v-spacer></v-spacer>
 
                     <div>
-                        <span class="teal--text text-accent-5 font-weight-bold mr-2 body-1">user code:</span> 
-                        <span class="pink--text text-accent-2 font-weight-bold body-2">JkI7e3</span>
+                        <span class="teal--text text-accent-5 font-weight-bold mr-2 caption">user code:</span> 
+                        <span class="pink--text text-accent-2 font-weight-bold caption">JkI7e3</span>
                     </div>
     
                 </v-row>

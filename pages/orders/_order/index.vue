@@ -15,29 +15,29 @@
                                 <div>
                                     <div style="margin-bottom: .3em; margin-top: 1em;">
                                         <v-icon left small class="font-weight-bold">subject</v-icon>
-                                        <span class="body-2 font-weight-bold title">Order Overview </span>
+                                        <span class="body-2 font-weight-bold title caption">Order Overview </span>
                                     </div>
                                     <!-- Full Name -->
                                     <div style="margin-bottom: .1em;">
-                                        <span class="caption option error--text"><span class="grey--text mr-1 ml-2">-</span>Order Code: </span> 
+                                        <span class="caption option error--text caption"><span class="grey--text mr-1 ml-2">-</span>Order Code: </span> 
                                         <span class="caption answer"> {{overview.orderCode}} </span>
                                     </div>
 
                                     <!-- Birth date -->
                                     <div style="margin-bottom: .1em;">
-                                        <span class="caption option error--text"><span class="grey--text mr-1 ml-2">-</span>Order Type: </span> 
+                                        <span class="caption option error--text caption"><span class="grey--text mr-1 ml-2">-</span>Order Type: </span> 
                                         <span class="caption answer"> Long Term Contract </span>
                                     </div>
 
                                     <!-- Accepting Bids -->
                                     <div style="margin-bottom: .1em;">
-                                        <span class="caption option error--text"><span class="grey--text mr-1 ml-2">-</span>Order Category: </span> 
+                                        <span class="caption option error--text caption"><span class="grey--text mr-1 ml-2">-</span>Order Category: </span> 
                                         <span class="caption answer"> Mobile App Development </span>
                                     </div>
 
                                     <!-- Nationality -->
                                     <div style="margin-bottom: .1em;">
-                                        <span class="option error--text"><span class="grey--text mr-1 ml-2">-</span>Order Status: </span> 
+                                        <span class="option error--text caption"><span class="grey--text mr-1 ml-2">-</span>Order Status: </span> 
                                         <span class="answer"> Unpublished </span>
                                     </div>
 
@@ -52,30 +52,30 @@
                                 <div>
                                     <div style="margin-bottom: .3em; margin-top: 1em;">
                                         <v-icon left small class="font-weight-bold">history</v-icon>
-                                        <span class="body-2 font-weight-bold title">Order Details </span>
+                                        <span class="body-2 font-weight-bold title caption">Order Details </span>
                                     </div>
                                     
                                      <!-- Nationality -->
                                     <div style="margin-bottom: .1em;">
-                                        <span class="option error--text"><span class="grey--text mr-1 ml-2">-</span>Bidding/Submission Deadline: </span> 
+                                        <span class="option error--text caption"><span class="grey--text mr-1 ml-2">-</span>Bidding/Submission Deadline: </span> 
                                         <span class="answer"> 22nd October 2020 </span>
                                     </div>
 
                                     <!-- Nationality -->
                                     <div style="margin-bottom: .1em;">
-                                        <span class="option error--text"><span class="grey--text mr-1 ml-2">-</span>Order Length: </span> 
+                                        <span class="option error--text caption"><span class="grey--text mr-1 ml-2">-</span>Order Length: </span> 
                                         <span class="answer"> ~ 3 Months </span>
                                     </div>
 
                                     <!-- Nationality -->
                                     <div style="margin-bottom: .1em;">
-                                        <span class="option error--text"><span class="grey--text mr-1 ml-2">-</span>Contractors Needed: </span> 
+                                        <span class="option error--text caption"><span class="grey--text mr-1 ml-2">-</span>Contractors Needed: </span> 
                                         <span class="answer"> 1  </span>
                                     </div>
 
                                     <!-- Nationality -->
                                     <div style="margin-bottom: .1em;">
-                                        <span class="option error--text"><span class="grey--text mr-1 ml-2">-</span>Proposal Required: </span> 
+                                        <span class="option error--text caption"><span class="grey--text mr-1 ml-2">-</span>Proposal Required: </span> 
                                         <span class="answer"> Yes </span>
                                     </div>
 
@@ -91,19 +91,19 @@
                                 <div>
                                     <div style="margin-bottom: .3em; margin-top: 1em;">
                                         <v-icon left small class="font-weight-bold">credit_card</v-icon>
-                                        <span class="body-2 font-weight-bold title">Order Payment Info </span> 
+                                        <span class="body-2 font-weight-bold title caption">Order Payment Info </span> 
                                     </div>
 
 
                                     <!-- Birth date -->
                                     <div style="margin-bottom: .1em;">
-                                        <span class="option error--text"><span class="grey--text mr-1 ml-2">-</span> Payable Amount: </span> 
+                                        <span class="option error--text caption"><span class="grey--text mr-1 ml-2">-</span> Payable Amount: </span> 
                                         <span class="answer"> KES 40000 </span>
                                     </div>
 
                                     <!-- Nationality -->
                                     <div style="margin-bottom: .1em;">
-                                        <span class="option error--text text-lighten-2"> <span class="grey--text mr-1 ml-2">-</span> Payment At: </span> 
+                                        <span class="option error--text text-lighten-2 caption"> <span class="grey--text mr-1 ml-2">-</span> Payment At: </span> 
                                         <span class="answer "> End of contract </span>
                                     </div>
 
@@ -147,7 +147,7 @@
                     <v-card class="description" hover flat>
                         <v-card-title class="cyan lighten-2">
                             <v-icon left class="font-weight-bold white--text">note</v-icon>
-                            <span class="body-2 white--text font-weight-bold">Order Description</span>
+                            <span class="caption white--text font-weight-bold">Order Description</span>
 
                             <v-spacer></v-spacer>
                             <OrderDescription 
@@ -158,7 +158,7 @@
                             class="px-2 pt-3 font-weight-normal"
                             style="color: grey;"
                         >
-                            <p style="color: grey;" class="px-3">
+                            <p style="color: grey;" class="px-3 caption">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus, velit necessitatibus eius deleniti facilis, sequi facere hic dolorem minus, minima odio maiores. Impedit nihil dolore velit non quibusdam, unde modi obcaecati doloremque! Laborum facere voluptatibus, a in blanditiis dolorem reprehenderit iste quo architecto ipsum quod consequuntur? Aut quasi unde pariatur libero incidunt velit. Corporis libero illum voluptatum minima ullam vero facere nemo doloribus voluptates ad repellendus corrupti hic amet quis unde maxime distinctio, ea ex eaque. Nisi eum deserunt dolore deleniti voluptates velit minima, illo perferendis aspernatur vero nemo aliquid quidem corporis sapiente odio quia consequuntur iste obcaecati laborum saepe. Incidunt possimus eum hic. Enim, ex molestias! Praesentium, odio, vitae non molestiae repudiandae quaerat veniam adipisci quo ullam maiores veritatis enim eligendi! Illo assumenda tempora ex optio adipisci, rem voluptate earum quod nemo harum cupiditate aperiam explicabo amet quasi culpa reprehenderit error laudantium provident perspiciatis, doloribus temporibus veniam! Recusandae temporibus laborum obcaecati aliquam ad necessitatibus saepe corporis ipsam alias quam inventore, architecto expedita nihil doloremque tenetur reiciendis, numquam repellat hic? Voluptatibus quia iusto, ipsam modi velit, incidunt officiis, corporis facilis consectetur libero odio repudiandae in a vitae sapiente quos? Veniam qui officia quas. Vel consequuntur numquam quaerat dolores? Hic nemo quidem neque laudantium dolor recusandae officia odit, nobis illum culpa, voluptates accusantium eius fugiat minima aliquam alias sequi doloribus molestias natus ut expedita impedit commodi assumenda deleniti? Maiores cupiditate fuga nesciunt ex ad illo sapiente asperiores amet error ipsam, nam eveniet facere voluptas deserunt dolores, quas debitis totam officiis cumque est. Quae rerum possimus ipsa ipsam quo, perferendis, soluta ullam tenetur provident praesentium, exercitationem illum voluptas numquam eos enim dolor eius incidunt velit voluptatum! Voluptatum perferendis porro delectus molestiae excepturi aspernatur magnam dolore maiores alias, reprehenderit enim perspiciatis voluptatibus blanditiis tenetur impedit quidem. Impedit omnis facilis asperiores odio magni.
                             </p>
                         </v-card-text>
@@ -295,7 +295,7 @@ export default {
     .option {
         font-weight: bolder; 
         margin-right: 1em; 
-        font-size: .8rem;
+        
         color: #ae4a1f; 
         margin-left: .7em;
         

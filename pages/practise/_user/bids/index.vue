@@ -15,7 +15,7 @@
                 <div>
                     <v-btn color="blue" text @click="reload">
                         <v-icon left small>restore</v-icon>
-                        <span class="text-lowercase body-2 font-weight-bold font-italic">Reload all</span>
+                        <span class="text-lowercase caption font-weight-bold">Reload all</span>
                     </v-btn>
                 </div>
                 <!-- End of button for reloading all -->
@@ -31,7 +31,7 @@
                         <template v-slot:activator="{ on, attrs }">
                             <v-btn text color="pink accent-2" v-on="on" v-bind="attrs"> 
                                 <v-icon left class="font-weight-bold" small>sort</v-icon>
-                                <span class="text-capitalize body-2 font-weight-bold font-italic">filter by date</span>
+                                <span class="text-capitalize caption font-weight-bold">filter by date</span>
                             </v-btn>
                         </template>
                         <v-date-picker no-title v-model="sort_date" @input="sort_by_date" ></v-date-picker>
@@ -43,9 +43,9 @@
                     <div>
                         <v-btn text color="teal accent-5"  @click="snackbar = !snackbar"> 
                             <v-icon small left>sort</v-icon>
-                            <span class="text-lowercase body-2 font-weight-bold font-italic">Filter By category</span>
+                            <span class="text-lowercase caption font-weight-bold">Filter By category</span>
                         </v-btn>
-                        <v-snackbar v-model="snackbar" top color="#f7f8fb" timeout="15000">
+                        <v-snackbar v-model="snackbar" top color="#f7f8fb" timeout=15000>
                             <v-select
                                 dense
                                 :items="statuses"
@@ -63,14 +63,14 @@
                 <v-spacer></v-spacer>
 
                 <div>
-                    <span class="teal--text text-accent-5 font-weight-bold mr-2 subtitle">Practise code:</span> 
-                    <span class="pink--text text-accent-2 font-weight-bold body-2">
+                    <span class="teal--text text-accent-5 font-weight-bold mr-2 caption">Practise code:</span> 
+                    <span class="pink--text text-accent-2 font-weight-bold caption">
                         {{ this.$route.params.user}}
                     </span>
                 </div>
  
             </v-row>
-
+            
             <v-card flat hover class="mb-1 project" v-for="bid in bids" :key="bid.bid_code" 
                 :class="random_border_class()" 
                 

@@ -20,7 +20,7 @@
           @click="showData"
         >
           <v-icon small left>create</v-icon>
-          <span class="text-capitalize font-weight-bold" style="text-decoration: underline">edit services</span>
+          <span class="text-capitalize font-weight-bold caption" style="text-decoration: underline">edit services</span>
         </v-btn>
       </template>
 
@@ -29,7 +29,7 @@
           class="body-1 teal accent-4"
           primary-title
         >
-          <span class="white--text">Update Services Details</span>
+          <span class="white--text caption">Update Services Details</span>
         </v-card-title>
 
         <!-- content for the pop up -->

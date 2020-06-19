@@ -19,7 +19,7 @@
           depressed
         >
           <v-icon small left>edit</v-icon>
-          <span class="text-capitalize font-weight-bold" style="text-decoration: underline">edit description</span>
+          <span class="text-capitalize font-weight-bold caption" style="text-decoration: underline">edit description</span>
         </v-btn>
       </template>
 
@@ -28,7 +28,7 @@
           class="body-1 teal accent-4"
           primary-title
         >
-          <span class="white--text">Update Practise Details</span>
+          <span class="white--text caption">Update Practise Details</span>
         </v-card-title>
 
         <!-- content for the pop up -->

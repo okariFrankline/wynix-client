@@ -19,7 +19,7 @@
           depressed
         >
           <v-icon small left>create</v-icon>
-          <span class="text-capitalize font-weight-bold" style="text-decoration: underline">edit details</span>
+          <span class="text-capitalize font-weight-bold caption" style="text-decoration: underline">edit details</span>
         </v-btn>
       </template>
 

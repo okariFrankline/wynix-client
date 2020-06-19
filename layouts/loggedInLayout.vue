@@ -20,7 +20,7 @@
             <span class="font-weight-bold body-2">Orders</span>
           </v-subheader>
           <!-- TO available orders -->
-          <v-list-item nuxt to="/orders/available" style="text-decoration: none;">
+          <v-list-item nuxt to="/orders/available" style="text-decoration: none;" exact>
             <v-list-item-action>
               <v-icon small>launch</v-icon>
             </v-list-item-action>
@@ -51,7 +51,7 @@
           <!-- End of available orders -->
 
           <!-- TO available orders -->
-          <v-list-item nuxt to="/orders/available" style="text-decoration: none">
+          <v-list-item nuxt to="/practise/frank/assigned" style="text-decoration: none" exact>
             <v-list-item-action>
               <v-icon small>subject</v-icon>
             </v-list-item-action>
@@ -84,12 +84,12 @@
             <span class="font-weight-bold body-2">Transactions</span>
           </v-subheader>
           <!-- TO available orders -->
-          <v-list-item nuxt to="/transaction/frank" style="text-decoration: none">
+          <v-list-item nuxt to="/practise/frank/tokens" style="text-decoration: none" exact>
             <v-list-item-action>
               <v-icon small>receipt_long</v-icon>
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title>
+              <v-list-item-title class="caption">
                 My Tokens
               </v-list-item-title>
             </v-list-item-content>

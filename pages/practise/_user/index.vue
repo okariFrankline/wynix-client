@@ -14,7 +14,7 @@
                             </v-avatar>
                             <div>
                             <v-chip class="cyan ml-5 small">
-                                <span class="text-center white--text darken-4 text-capitalize">
+                                <span class="text-center white--text darken-4 text-capitalize caption">
                                     {{ practise.owner.username}}
                                 </span>
                             </v-chip>
@@ -71,35 +71,35 @@
                                 <div style="margin-left: -1em;">
                                     <div style="margin-bottom: .3em; margin-top: .1em;">
                                         <v-icon left small class="font-weight-bold error--text">home_work</v-icon>
-                                        <span class="body-2 font-weight-bold title error--text">Practise Account Details </span>
+                                        <span class="caption font-weight-bold title error--text">Practise Account Details </span>
                                     </div>
 
                                     <!-- Full Name -->
                                     <div style="margin-bottom: .1em;">
                                         <v-icon small class="ml-7" color="blue">contacts</v-icon>
-                                        <span class="caption option blue--text">Full name: </span> 
-                                        <span class="caption answer"> {{ practise.full_name }} </span>
+                                        <span class="caption option blue--text caption">Full name: </span> 
+                                        <span class="answer caption"> {{ practise.full_name }} </span>
                                     </div>
 
                                     <!-- Birth date -->
                                     <div style="margin-bottom: .1em;">
                                         <v-icon small class="ml-7" color="blue">email</v-icon>
-                                        <span class="caption option blue--text">Email Address: </span> 
-                                        <span class="caption answer"> {{ practise.email }} </span>
+                                        <span class="caption option blue--text caption">Email Address: </span> 
+                                        <span class="answer caption"> {{ practise.email }} </span>
                                     </div>
 
                                     <!-- Accepting Bids -->
                                     <div style="margin-bottom: .1em;">
                                         <v-icon small class="ml-7" color="blue">phone</v-icon>
-                                        <span class="caption option blue--text">Phone number: </span> 
-                                        <span class="caption answer"> {{ practise.phone }} </span>
+                                        <span class="caption option blue--text caption">Phone number: </span> 
+                                        <span class="answer caption"> {{ practise.phone }} </span>
                                     </div>
 
                                     <!-- Nationality -->
                                     <div style="margin-bottom: .1em;">
                                         <v-icon small class="ml-7" color="blue">bubble_chart</v-icon>
-                                        <span class="option blue--text">Practise Status: </span> 
-                                        <span class="answer"> {{ practise.status }} </span>
+                                        <span class="option blue--text caption">Practise Status: </span> 
+                                        <span class="answer caption"> {{ practise.status }} </span>
                                     </div>
 
                                     <!-- Edit button -->
@@ -117,28 +117,28 @@
                                 <div style="margin-left: -1em;">
                                     <div style="margin-bottom: .3em; margin-top: 1em;">
                                         <v-icon left small class="font-weight-bold error--text">my_location</v-icon>
-                                        <span class="body-2 font-weight-bold title error--text">Practise Location Details </span>
+                                        <span class="caption font-weight-bold title error--text">Practise Location Details </span>
                                     </div>
                                     
                                      <!-- Nationality -->
                                     <div style="margin-bottom: .1em;">
                                         <v-icon small color="blue" class="ml-7">person_pin</v-icon>
-                                        <span class="option blue--text">Base Country: </span> 
+                                        <span class="option blue--text caption">Base Country: </span> 
                                         <span class="answer"> {{ practise.country }} </span>
                                     </div>
 
                                     <!-- Nationality -->
                                     <div style="margin-bottom: .1em;">
                                         <v-icon small color="blue" class="ml-7">room</v-icon>
-                                        <span class="option blue--text">Base City: </span> 
+                                        <span class="option blue--text caption">Base City: </span> 
                                         <span class="answer"> {{ practise.city }} </span>
                                     </div>
 
                                     <!-- Nationality -->
                                     <div style="margin-bottom: .1em;">
                                         <v-icon small color="blue" class="ml-7">contact_support</v-icon>
-                                        <span class="option blue--text">Operate outside base location?: </span> 
-                                        <span class="answer"> {{ practise.outside_operation }}  </span>
+                                        <span class="option blue--text caption">Operate outside base location?: </span> 
+                                        <span class="answer caption"> {{ practise.outside_operation }}  </span>
                                     </div>
 
                                     <!-- Edit button -->
@@ -160,12 +160,12 @@
                                 <div style="margin-left: -1em;">
                                     <div style="margin-bottom: .3em; margin-top: 1em;">
                                         <v-icon left small class="font-weight-bold error--text">credit_card</v-icon>
-                                        <span class="body-2 font-weight-bold title error--text">Practise Expertise </span> 
+                                        <span class="caption font-weight-bold title error--text">Practise Expertise </span> 
                                     </div>
                                     <!-- Birth date -->
                                     <div style="margin-bottom: .1em;">
                                         <ul>
-                                            <li class="option blue--text ml-5" v-for="expertise in practise.expert_in" :key="expertise">
+                                            <li class="option blue--text ml-5 caption" v-for="expertise in practise.expert_in" :key="expertise">
                                                 {{ expertise }}
                                             </li>
                                         </ul>
@@ -187,14 +187,14 @@
                                 <div style="margin-left: -2em;">
                                     <div style="margin-bottom: .3em; margin-top: 1em;">
                                         <v-icon left small class="font-weight-bold error--text">chat_bubble_outline</v-icon>
-                                        <span class="body-2 font-weight-bold title error--text">What previous clients say </span> 
+                                        <span class="caption font-weight-bold title error--text">What previous clients say </span> 
                                     </div>
 
                                     <!-- Birth date -->
                                     <div style="margin-bottom: .1em;">
                                         <div style="margin-bottom: -1.2em;" v-for="comment in practise.comments" :key="comment.id">
-                                            <div class="font-italic font-weight-bold blue--text ml-2" style="font-size: .8rem;">~{{ comment.owner}}</div>
-                                            <p class="ml-7 font-weight-bold font-italic" style="font-size: .8rem;">
+                                            <div class="font-italic font-weight-bold blue--text ml-2 caption">~{{ comment.owner}}</div>
+                                            <p class="ml-7 font-weight-bold font-italic caption">
                                                 {{ comment.comment }}
                                             </p>
                                         </div>
@@ -211,7 +211,7 @@
                 
                             <v-btn small text dark color="pink" @click="() => this.$router.back()">
                                 <v-icon left>undo</v-icon>
-                                <span class="text-lowercase">back to bids</span>
+                                <span class="text-lowercase caption">back to bids</span>
                             </v-btn>
                         </v-card-actions>
                     </v-card>
@@ -219,12 +219,12 @@
                 <!-- End of colum for details -->
 
                 <!-- Column for the description -->
-                <v-col cols="12" md="7" style="margin-top: -1em;" class="mt-10">
+                <v-col cols="12" md="7" style="margin-top: -1em;" class="mt-1">
 
                     <v-card flat color="#f7f8fb">
                         <v-card-title class="cyan lighten-2">
                             <v-icon left class="font-weight-bold white--text">note</v-icon>
-                            <span class="body-2 white--text font-weight-bold">Practioner Biography</span>
+                            <span class="body-2 white--text font-weight-bold caption">Practioner Biography</span>
 
                             <v-spacer></v-spacer>
                             <Descriptions 
@@ -235,7 +235,7 @@
                             class="px-2 pt-3 font-weight-normal"
                             style="color: grey;"
                         >
-                            <p style="color: grey; font-weight: normal;" class="px-3">
+                            <p style="color: grey; font-weight: normal;" class="px-3 caption">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ducimus, velit necessitatibus eius deleniti facilis, sequi facere hic dolorem minus, minima odio maiores. Impedit nihil dolore velit non quibusdam, unde modi obcaecati doloremque! Laborum facere voluptatibus, a in blanditiis dolorem reprehenderit iste quo architecto ipsum quod consequuntur? Aut quasi unde pariatur libero incidunt velit. Corporis libero illum voluptatum minima ullam vero facere nemo doloribus voluptates ad repellendus corrupti hic amet quis unde maxime distinctio, ea ex eaque. Nisi eum deserunt dolore deleniti voluptates velit minima, illo perferendis aspernatur vero nemo aliquid quidem corporis sapiente odio quia consequuntur iste obcaecati laborum saepe. Incidunt possimus eum hic. Enim, ex molestias! Praesentium, odio, vitae non molestiae repudiandae quaerat veniam adipisci quo ullam maiores veritatis enim eligendi! Illo assumenda tempora ex optio adipisci, rem voluptate earum quod nemo harum cupiditate aperiam explicabo amet quasi culpa reprehenderit error laudantium provident perspiciatis, doloribus temporibus veniam! Recusandae temporibus laborum obcaecati aliquam ad necessitatibus saepe corporis ipsam alias quam inventore, architecto expedita nihil doloremque tenetur reiciendis, numquam repellat hic? Voluptatibus quia iusto, ipsam modi velit, incidunt officiis, corporis facilis consectetur libero odio repudiandae in a vitae sapiente quos? Veniam qui officia quas. Vel consequuntur numquam quaerat dolores? Hic nemo quidem neque laudantium dolor recusandae officia odit, nobis illum culpa, voluptates accusantium eius fugiat minima aliquam alias sequi doloribus molestias natus ut expedita impedit commodi assumenda deleniti? Maiores cupiditate fuga nesciunt ex ad illo sapiente asperiores amet error ipsam, nam eveniet facere voluptas deserunt dolores, quas debitis totam officiis cumque est. Quae rerum possimus ipsa ipsam quo, perferendis, soluta ullam tenetur provident praesentium, exercitationem illum voluptas numquam eos enim dolor eius incidunt velit voluptatum! Voluptatum perferendis porro delectus molestiae excepturi aspernatur magnam dolore maiores alias, reprehenderit enim perspiciatis voluptatibus blanditiis tenetur impedit quidem. Impedit omnis facilis asperiores odio magni.
                             </p>
                         </v-card-text>
@@ -365,7 +365,6 @@ export default {
     .option {
         font-weight: bolder; 
         margin-right: 1em; 
-        font-size: .8rem;
         color: #ae4a1f; 
         margin-left: .7em;
         
