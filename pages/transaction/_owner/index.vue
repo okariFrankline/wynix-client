@@ -75,28 +75,28 @@
                 <v-card flat hover ripple class="mb-1 project" v-for="transaction in transactions" :key="transaction.id" :class="transaction_class(transaction.transaction_type)">
                     <v-row class="px-3">
                         <v-col cols="12" md="4">
-                            <div class="caption grey--text font-italic">Transaction Type</div>
-                            <div class="caption mt-2 font-weight-bold teal--text tex-accent-2">
+                            <div class="caption grey--text font-italic font-weight-bold">Transaction Type</div>
+                            <div class="caption mt-2 font-weight-bold red--text text-accent-2">
                                 {{ transaction.transaction_type }}
                             </div>
                         </v-col>
 
                         <v-col cols="6" sm="4" md="2">
-                            <div class="caption grey--text font-italic">Transaction Date</div>
-                            <div class="caption mt-2 font-weight-bold blue--text tex-lighten-2">
+                            <div class="caption grey--text font-italic font-weight-bold">Transaction Date</div>
+                            <div class="caption mt-2 font-weight-bold teal--text text-lighten-2">
                                 {{ transaction.transaction_date }}
                             </div>
                         </v-col>
 
                         <v-col cols="6" sm="4" md="2">
-                            <div class="caption grey--text font-italic">Transaction Amount</div>
-                            <div class="caption mt-2 font-weight-bold blue--text tex-lighten-2">
+                            <div class="caption grey--text font-italic font-weight-bold">Transaction Amount</div>
+                            <div class="caption mt-2 font-weight-bold pink--text text-lighten-2">
                                 {{ transaction.transaction_amount}}
                             </div>
                         </v-col>
 
                         <v-col cols="6" sm="4" md="2">
-                            <div class="caption grey--text font-italic">Transaction Recipient</div>
+                            <div class="caption grey--text font-italic font-weight-bold">Transaction Recipient</div>
                             <div class="caption mt-2 font-weight-bold blue--text tex-lighten-2">
                                 {{ transaction.recipient }}
                             </div>

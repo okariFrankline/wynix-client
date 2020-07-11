@@ -80,36 +80,36 @@
                 >
                     <v-row class="px-3">
                         <v-col cols="12" md="4">
-                            <div class="caption grey--text font-italic">Order Category</div>
-                            <div class="caption mt-2 font-weight-bold teal--text tex-accent-2">
+                            <div class="caption grey--text font-italic font-weight-bold">Order Category</div>
+                            <div class="caption mt-2 font-weight-bold red--text tex-lighten-2">
                                 {{ project.order_category }}
                             </div>
                         </v-col>
 
                         <v-col cols="6" sm="4" md="2">
-                            <div class="caption grey--text font-italic">Order Type</div>
-                            <div class="caption mt-2 font-weight-bold blue--text tex-lighten-2">
+                            <div class="caption grey--text font-italic  font-weight-bold">Order Type</div>
+                            <div class="caption mt-2 font-weight-bold teal--text text-lighten-2">
                                 {{ project.order_type}}
                             </div>
                         </v-col>
 
                         <v-col cols="6" sm="4" md="2">
-                            <div class="caption grey--text font-italic">Payable Amount</div>
-                            <div class="caption mt-2 font-weight-bold blue--text tex-lighten-2">
+                            <div class="caption grey--text font-italic font-weight-bold">Payable Amount</div>
+                            <div class="caption mt-2 font-weight-bold pink--text tex-lighten-2">
                                 {{ project.payable_amount}}
                             </div>
                         </v-col>
 
                         <v-col cols="6" sm="4" md="2">
-                            <div class="caption grey--text font-italic">Bid before</div>
-                            <div class="caption mt-2 font-weight-bold blue--text tex-lighten-2">
+                            <div class="caption grey--text font-italic font-weight-bold">Bid before</div>
+                            <div class="caption mt-2 font-weight-bold red--text tex-lighten-2">
                                 {{ project.transaction_date }}
                             </div>
                         </v-col>
 
                         <v-col cols="6" sm="4" md="2">
-                            <div class="caption grey--text font-italic">Order Length</div>
-                            <div class="caption mt-2 font-weight-bold blue--text tex-lighten-2">
+                            <div class="caption grey--text font-italic font-weight-bold">Order Length</div>
+                            <div class="caption mt-2 font-weight-bold blue--text text-lighten-2">
                                 {{ project.order_length }}
                             </div>
                         </v-col>
@@ -123,8 +123,30 @@
 </template>
 
 <script>
+//mport availableOrders from "@plugins/queries/availableOrders.gql"
+import gql from "graphql-tag"
+// query for all available orders
+// const ALL_AVAILABLE_ORDERS = gql`
+//     query allAvailableOrders {
+//         availableOrders {
+//             orderCategory
+//             orderType
+//             payableAmount
+//             bidDeadline
+//             orderLength
+//             orderCode
+//             id
+//         }
+//     }
+// }`
+
+// components
 export default {
-  layout: "loggedInLayout",
+    // name o  
+    name: 'AvailbleOrders',  
+    // layout
+    layout: "loggedInLayout",
+    // data
     data: () => ({
         formData: {
             sort_type: "",
@@ -191,7 +213,7 @@ export default {
                 "orange-borders",
                 "tomato-borders",
                 "blue-borders",
-                "purple-borders"
+                //"purple-borders"
             ]
 
             return colors[Math.floor(Math.random() * colors.length)]
@@ -228,6 +250,11 @@ export default {
             this.projects = sorted_by_category
         },
     },
+    // apollo
+    apollo: {
+        // get the orders
+        
+    }
 }
 </script>
 
@@ -248,11 +275,11 @@ export default {
         border-right: 4px solid #3cd1c2;
         border-bottom: 1px solid #3cd1c2;
     }
-    .project.purple-borders {
+    /* .project.purple-borders {
         border-left: 4px solid #9575CD;
         border-right: 4px solid #9575CD;
         border-bottom: 1px solid #9575CD;
-    }
+    } */
     .project:hover {
         text-decoration: none;
     }

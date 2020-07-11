@@ -45,30 +45,30 @@
             >
                 <v-row class="px-3">
                     <v-col cols="12" md="4">
-                        <div class="caption grey--text font-italic">Bid Placed For</div>
+                        <div class="caption grey--text font-italic font-weight-bold">Bid Placed For</div>
                         <div class="caption mt-2 font-weight-bold teal--text tex-accent-2">
-                            <nuxt-link :to=" `/orders/${bid.order_code}` " class="caption mt-2 font-weight-bold teal--text tex-accent-2">
+                            <nuxt-link :to=" `/orders/${bid.order_code}` " class="caption mt-2 font-weight-bold red--text text-accent-2">
                                 <span>Order</span> {{ bid.order_code }}
                             </nuxt-link>
                         </div>
                     </v-col>
 
                     <v-col cols="6" sm="4" md="2">
-                        <div class="caption grey--text font-italic">Asking Amount</div>
-                        <div class="caption mt-2 font-weight-bold blue--text tex-lighten-2">
+                        <div class="caption grey--text font-italic font-weight-bold">Asking Amount</div>
+                        <div class="caption mt-2 font-weight-bold teal--text text-lighten-2">
                             {{ bid.asking_amount}}
                         </div>
                     </v-col>
 
                     <v-col cols="6" sm="4" md="2">
-                        <div class="caption grey--text font-italic">Deposit Requested</div>
-                        <div class="caption mt-2 font-weight-bold blue--text tex-lighten-2">
+                        <div class="caption grey--text font-italic font-weight-bold">Deposit Requested</div>
+                        <div class="caption mt-2 font-weight-bold pink--text tex-lighten-2">
                             {{ bid.deposit}}
                         </div>
                     </v-col>
 
                     <v-col cols="6" sm="4" md="2">
-                        <div class="caption grey--text font-italic">Date Placed</div>
+                        <div class="caption grey--text font-italic font-weight-bold">Date Placed</div>
                         <div class="caption mt-2 font-weight-bold blue--text tex-lighten-2">
                             {{ bid.inserted_at}}
                         </div>

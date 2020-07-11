@@ -11,8 +11,12 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/apollo": "^4.0.1-rc.1",
     "@nuxtjs/axios": "^5.3.6",
+    "graphql": "^15.2.0",
+    "graphql-tag": "^2.10.3",
     "nuxt": "^2.0.0",
+    "vue-apollo": "^3.0.3",
     "vue-material": "^1.0.0-beta-14"
   },
   "devDependencies": {

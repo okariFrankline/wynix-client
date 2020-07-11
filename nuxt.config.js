@@ -59,6 +59,7 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/apollo',
   ],
   /*
   ** Axios module configuration
@@ -66,27 +67,12 @@ export default {
   */
   axios: {
   },
-  /*
-  ** vuetify module configuration
-  ** https://github.com/nuxt-community/vuetify-module
-  */
-  vuetify: {
-    customVariables: ['~/assets/variables.scss'],
-    theme: {
-      dark: false,
-      themes: {
-        dark: {
-          primary: "#3cd1c2",
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3
-        },
-        light: {
-          background: colors.grey.lighten3
-        }
+  // apollo
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: 'http://localhost:40000/graphql',
+        wsEndpoint: ''
       }
     }
   },
