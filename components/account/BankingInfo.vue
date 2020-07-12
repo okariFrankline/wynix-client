@@ -19,7 +19,7 @@
           depressed
           @click="showData"
         >
-          <span class="text-capitalize font-weight-bold caption" style="text-decoration: underline">edit location</span>
+          <span class="text-capitalize font-weight-bold caption" style="text-decoration: underline">Edit Banking</span>
         </v-btn>
       </template>
 
@@ -28,7 +28,7 @@
           class="body-1 teal accent-4"
           primary-title
         >
-          <span class="white--text body-2 font-weight-bold">Update Location Details</span>
+          <span class="white--text body-2 font-weight-bold">Update Banking Information</span>
         </v-card-title>
 
         <!-- content for the pop up -->
@@ -37,31 +37,27 @@
             <v-form class="px-3"> 
                 <!-- Base Country of the practise -->
                 <v-text-field 
-                    :value="country ? country : ''"
-                    label="Base Country" 
-                    v-model="formData.country" 
-                    prepend-icon="place"
+                    label="Bank name" 
+                    v-model="formData.bankName" 
+                    prepend-icon="account_balance"
                 ></v-text-field>
                 <!-- End of country field -->
 
                 <!-- City field -->
                 <v-text-field 
-                    :value="city ? city : ''"
-                    label="Base City" 
-                    v-model="formData.city" 
-                    prepend-icon="person_pin"
+                    label="Bank branch" 
+                    v-model="formData.bankBranch"
+                    prepend-icon="account_balance_wallet"
                 ></v-text-field>
                 <!-- End of city field -->
 
-                <!-- Phone field -->
-                <v-select
-                    :items="items"
-                    :value=" outside_operation ? outside_operation : '' "
-                    label="Operate outside base location?" 
-                    v-model="formData.outside_operation" 
-                    prepend-icon="contact_support"
-                ></v-select>
-                <!-- End of email field -->
+                <!-- City field -->
+                <v-text-field 
+                    label="Account number" 
+                    v-model="formData.accountNUmber"
+                    prepend-icon="credit_card"
+                ></v-text-field>
+                <!-- End of city field -->
 
                 <v-row>
                     <!-- Cancel Button -->
@@ -104,46 +100,22 @@
 <script>
 //import format from "date-fns/format"
   export default {
-    name: "LocationDetailsPopup",
+    name: "BankingInfo",
     // data
     data: () => ({
         // dialog control
         dialog: false,
         // form data
         formData: {
-            city: "",
-            country: "",
-            outside_operation: ""
-        },
-        // items
-        items: [
-            "Yes",
-            "No"
-        ]
-    }),
-    // props
-    props: {
-        country: {
-            type: String
-        },
-        city: {
-            type: String
-        },
-        outside_operation: {
-            type: String
+            bankName: "",
+            bankBranch: "",
+            accountNumber: ""
         }
-    },
-
-    computed: {
-    },
-
+    }),
     methods: {
         submit() {
-            this.$emit('save-location-data', this.formData)
-        },
-        showData() {
-            console.log(this.city, this.country, this.outside_operation)
-        },
+            this.$emit('save-banking-data', this.formData)
+        }
     }
   }
 </script>

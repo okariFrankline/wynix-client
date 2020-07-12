@@ -9,19 +9,19 @@
                 <v-col cols="12" md="5">
                     <v-row>
                         <v-col cols="12" md="4">
-                            <v-avatar right size="150" class="mb-2">
+                            <v-avatar right size="140" class="mb-2 elevation-3 ml-2">
                                 <img src="/images/person.jpg" class="grey lighten-1">
                             </v-avatar>
                             <div>
-                            <v-chip class="cyan ml-5 small">
+                            <!-- <v-chip class="cyan ml-5 small">
                                 <span class="text-center white--text darken-4 text-capitalize caption">
                                     {{ practise.owner.username}}
                                 </span>
-                            </v-chip>
+                            </v-chip> -->
                             </div>
                         </v-col>
 
-                        <v-col cols="12" md="8" class="mt-7">
+                        <v-col cols="12" md="8" class="mt-5">
                             <div style="margin-bottom: .1em;">
                                 <v-icon small class="ml-7">account_balance</v-icon>
                                 <span class="caption option pink--text">Type: </span> 
