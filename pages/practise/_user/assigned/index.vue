@@ -50,30 +50,33 @@
                 <v-card flat hover class="mb-1 project" v-for="order in orders" :key="order.id" :class="transaction_class()">
                     <v-row class="px-3">
                         <v-col cols="12" md="4">
-                            <div class="caption grey--text font-italic font-weight-bold">Order Category</div>
+                            <!-- <div class="caption grey--text font-italic font-weight-bold">Order Category</div> -->
                             <div class="caption mt-2 font-weight-bold teal--text tex-accent-2">
-                                <nuxt-link :to=" `/orders/${order.order_code}` " class="red--text text-accent-2">
+                                <nuxt-link :to=" `/orders/${order.order_code}` " class="teal--text text-accent-2">
+                                    <v-avatar class="mr-5 elevation-4 ml-5" size="45">
+                                        <v-icon :color="random_icon_color()">business_center</v-icon>
+                                    </v-avatar>
                                     {{ order.order_category }}
                                 </nuxt-link>
                             </div>
                         </v-col>
 
                         <v-col cols="6" sm="4" md="2">
-                            <div class="caption grey--text font-italic font-weight-bold">Assigned on</div>
+                            <div class="caption grey--text font-weight-bold" style="text-decoration: underline;">Assigned on</div>
                             <div class="caption mt-2 font-weight-bold blue--text tex-lighten-2">
                                 {{ order.assigned_on }}
                             </div>
                         </v-col>
 
                         <v-col cols="6" sm="4" md="2">
-                            <div class="caption grey--text font-italic font-weight-bold">Due Date</div>
+                            <div class="caption grey--text font-weight-bold" style="text-decoration: underline;">Due Date</div>
                             <div class="caption mt-2 font-weight-bold teal--text tex-lighten-2">
                                 {{ order.due_date }}
                             </div>
                         </v-col>
 
                         <v-col cols="6" sm="4" md="2">
-                            <div class="caption grey--text font-italic font-weight-bold">Order Owner</div>
+                            <div class="caption grey--text font-weight-bold" style="text-decoration: underline;">Order Owner</div>
                             <div class="caption mt-2 font-weight-bold pink--text text-lighten-2">
                                 {{ order.owner }}
                             </div>
@@ -166,6 +169,17 @@ export default {
             if (status == "In Progress") {return "#3cd1c2"}
             if (status == "Cancelled") { return "error"}
             return "#f83e70"
+        },
+
+        random_icon_color() {
+            const colors = [
+                "green",
+                "red",
+                "blue",
+                //"purple-borders"
+            ]
+
+            return colors[Math.floor(Math.random() * colors.length)]
         },
 
         transaction_class() {

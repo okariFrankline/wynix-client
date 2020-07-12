@@ -10,7 +10,7 @@
         </h1>
 
         <!-- content of the dashboard -->
-        <v-container class="my-5" >
+        <v-container class="my-5 mt-n4" >
             <!-- Sorting buttons -->
             <v-row class="mb-3 mx-5">
                 
@@ -40,23 +40,26 @@
             >
                 <v-row class="px-3">
                     <v-col cols="12" md="4">
-                        <div class="caption grey--text font-italic">Bidder Name</div>
+                        <!-- <div class="caption grey--text font-italic ml-10">Bidder</div> -->
                         <div class="caption mt-2 font-weight-bold teal--text tex-accent-2">
                             <nuxt-link :to=" `/practise/${bid.owner_id}` " class="caption mt-2 font-weight-bold teal--text tex-accent-2">
+                                <v-avatar class="mr-5 elevation-4 ml-10" size="47">
+                                    <img src="/images/person.jpg" class="grey lighten-2">
+                                </v-avatar>
                                 {{ bid.bid_owner }}
                             </nuxt-link>
                         </div>
                     </v-col>
 
                     <v-col cols="6" sm="4" md="2">
-                        <div class="caption grey--text font-italic">Asking Amount</div>
+                        <div class="caption grey--text font-weight-bold" style="text-decoration: underline;">Asking Amount</div>
                         <div class="caption mt-2 font-weight-bold blue--text tex-lighten-2">
                             {{ bid.asking_amount}}
                         </div>
                     </v-col>
 
                     <v-col cols="6" sm="4" md="2">
-                        <div class="caption grey--text font-italic">Deposit Requested</div>
+                        <div class="caption grey--text font-weight-bold" style="text-decoration: underline;">Deposit Requested</div>
                         <div class="caption mt-2 font-weight-bold blue--text tex-lighten-2">
                             {{ bid.deposit}}
                         </div>
@@ -123,11 +126,11 @@ export default {
     methods: {
 
         random_border_class() {
-            const colors = [
+             const colors = [
                 "orange-borders",
                 "tomato-borders",
-                "lime-borders",
-                "pink-borders"
+                "blue-borders",
+                //"purple-borders"
             ]
 
             return colors[Math.floor(Math.random() * colors.length)]
@@ -157,25 +160,25 @@ export default {
 </script>
 
 <style scoped>
-    .project.tomato-borders {
-        border-left: 4px solid #64FFDA;
-        border-right: 4px solid #64FFDA;
-        border-bottom: 1px solid #64FFDA;
+        .project.tomato-borders {
+        border-left: 4px solid tomato;
+        border-right: 4px solid tomato;
+        border-bottom: 1px solid tomato;
         
     }
     .project.orange-borders {
-        border-left: 4px solid #FFFF00;
-        border-right: 4px solid #FFFF00;
-        border-bottom: 1px solid #FFFF00;
+        border-left: 4px solid orange;
+        border-right: 4px solid orange;
+        border-bottom: 1px solid orange;
     }
-    .project.lime-borders {
-        border-left: 4px solid #76FF03;
-        border-right: 4px solid #76FF03;
-        border-bottom: 1px solid #76FF03;
+    .project.blue-borders {
+        border-left: 4px solid #3cd1c2;
+        border-right: 4px solid #3cd1c2;
+        border-bottom: 1px solid #3cd1c2;
     }
-    .project.pink-borders {
+    /* .project.pink-borders {
         border-left: 4px solid #FF80AB;
         border-right: 4px solid #FF80AB;
         border-bottom: 1px solid #FF80AB;
-    }
+    } */
 </style>

@@ -9,7 +9,7 @@
         </h1>
 
         <!-- content of the dashboard -->
-        <v-container class="my-5" >
+        <v-container class="my-5 mt-n4" >
 
             <md-empty-state
                 md-rounded
@@ -80,35 +80,38 @@
                 >
                     <v-row class="px-3">
                         <v-col cols="12" md="4">
-                            <div class="caption grey--text font-italic font-weight-bold">Order Category</div>
-                            <div class="caption mt-2 font-weight-bold red--text tex-lighten-2">
+                            <!-- <div class="caption grey--text font-italic font-weight-bold">Order Category</div> -->
+                            <div class="caption mt-2 font-weight-bold teal--text tex-lighten-2">
+                                <v-avatar class="mr-5 elevation-4 ml-5" size="45">
+                                    <v-icon :color="random_icon_color()">business_center</v-icon>
+                                </v-avatar>
                                 {{ project.order_category }}
                             </div>
                         </v-col>
 
                         <v-col cols="6" sm="4" md="2">
-                            <div class="caption grey--text font-italic  font-weight-bold">Order Type</div>
-                            <div class="caption mt-2 font-weight-bold teal--text text-lighten-2">
+                            <div class="caption grey--text  font-weight-bold" style="text-decoration: underline;">Order Type</div>
+                            <div class="caption mt-2 font-weight-bold cyan--text text-lighten-2">
                                 {{ project.order_type}}
                             </div>
                         </v-col>
 
                         <v-col cols="6" sm="4" md="2">
-                            <div class="caption grey--text font-italic font-weight-bold">Payable Amount</div>
+                            <div class="caption grey--text font-weight-bold" style="text-decoration: underline;">Payable Amount</div>
                             <div class="caption mt-2 font-weight-bold pink--text tex-lighten-2">
                                 {{ project.payable_amount}}
                             </div>
                         </v-col>
 
                         <v-col cols="6" sm="4" md="2">
-                            <div class="caption grey--text font-italic font-weight-bold">Bid before</div>
+                            <div class="caption grey--text font-weight-bold" style="text-decoration: underline;">Bid before</div>
                             <div class="caption mt-2 font-weight-bold red--text tex-lighten-2">
                                 {{ project.transaction_date }}
                             </div>
                         </v-col>
 
                         <v-col cols="6" sm="4" md="2">
-                            <div class="caption grey--text font-italic font-weight-bold">Order Length</div>
+                            <div class="caption grey--text font-weight-bold" style="text-decoration: underline;">Order Length</div>
                             <div class="caption mt-2 font-weight-bold blue--text text-lighten-2">
                                 {{ project.order_length }}
                             </div>
@@ -213,6 +216,17 @@ export default {
                 "orange-borders",
                 "tomato-borders",
                 "blue-borders",
+                //"purple-borders"
+            ]
+
+            return colors[Math.floor(Math.random() * colors.length)]
+        },
+
+        random_icon_color() {
+            const colors = [
+                "green",
+                "red",
+                "blue",
                 //"purple-borders"
             ]
 

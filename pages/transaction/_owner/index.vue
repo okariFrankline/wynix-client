@@ -8,7 +8,7 @@
         </h1>
 
         <!-- content of the dashboard -->
-        <v-container class="my-5" >
+        <v-container class="my-5 mt-n4" >
 
             <md-empty-state
                 md-rounded
@@ -75,28 +75,31 @@
                 <v-card flat hover ripple class="mb-1 project" v-for="transaction in transactions" :key="transaction.id" :class="transaction_class(transaction.transaction_type)">
                     <v-row class="px-3">
                         <v-col cols="12" md="4">
-                            <div class="caption grey--text font-italic font-weight-bold">Transaction Type</div>
-                            <div class="caption mt-2 font-weight-bold red--text text-accent-2">
+                            <!-- <div class="caption grey--text font-italic font-weight-bold">Transaction Type</div> -->
+                            <div class="caption mt-2 font-weight-bold cyan--text text-accent-2">
+                                <v-avatar class="mr-5 elevation-4 ml-10" size="45">
+                                    <v-icon :color="random_icon_color()">payment</v-icon>
+                                </v-avatar>
                                 {{ transaction.transaction_type }}
                             </div>
                         </v-col>
 
                         <v-col cols="6" sm="4" md="2">
-                            <div class="caption grey--text font-italic font-weight-bold">Transaction Date</div>
+                            <div class="caption grey--text font-weight-bold" style="text-decoration: underline;">Transaction Date</div>
                             <div class="caption mt-2 font-weight-bold teal--text text-lighten-2">
                                 {{ transaction.transaction_date }}
                             </div>
                         </v-col>
 
                         <v-col cols="6" sm="4" md="2">
-                            <div class="caption grey--text font-italic font-weight-bold">Transaction Amount</div>
+                            <div class="caption grey--text font-weight-bold" style="text-decoration: underline;">Transaction Amount</div>
                             <div class="caption mt-2 font-weight-bold pink--text text-lighten-2">
                                 {{ transaction.transaction_amount}}
                             </div>
                         </v-col>
 
                         <v-col cols="6" sm="4" md="2">
-                            <div class="caption grey--text font-italic font-weight-bold">Transaction Recipient</div>
+                            <div class="caption grey--text font-weight-bold" style="text-decoration: underline;">Transaction Recipient</div>
                             <div class="caption mt-2 font-weight-bold blue--text tex-lighten-2">
                                 {{ transaction.recipient }}
                             </div>
@@ -175,6 +178,17 @@ export default {
             if (status == "complete") {return "#3cd1c2"}
             if (status == "ongoing") {return "orange"}
             return "#f83e70"
+        },
+
+        random_icon_color() {
+            const colors = [
+                "green",
+                "red",
+                "blue",
+                //"purple-borders"
+            ]
+
+            return colors[Math.floor(Math.random() * colors.length)]
         },
 
         transaction_class(transaction_type) {
