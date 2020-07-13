@@ -13,9 +13,7 @@
       </v-toolbar>
 
       <!-- list of links aound the app -->
-        <v-list dense subheader rounded>
-           
-
+        <v-list dense subheader rounded v-if="account.accountType == 'Practise Account'">
           <v-subheader inset style="margin-left: -.1em;">
             <span class="font-weight-bold body-2">Orders</span>
           </v-subheader>
@@ -125,6 +123,123 @@
 
         </v-list>
 
+        <v-list dense subheader rounded v-if="account.accountType == 'Client Account'">
+          <v-subheader inset style="margin-left: -.1em;">
+            <span class="font-weight-bold body-2">Account</span>
+          </v-subheader>
+          <!-- TO available orders -->
+          <v-list-item nuxt to="/account/jdsk0IE3" style="text-decoration: none;" exact class="mt-n2">
+            <v-list-item-action>
+              <v-icon small>launch</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>
+                My Account
+              </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          <!-- End of available orders -->
+
+          <v-divider class="mt-3"></v-divider>
+          <!-- End of available orders -->
+          <v-subheader inset style="margin-left: -.1em;">
+            <span class="font-weight-bold body-2">Orders</span>
+          </v-subheader>
+          <!-- TO available orders -->
+          <v-list-item nuxt to="/practise/frank" style="text-decoration: none;" exact class="mt-n2">
+            <v-list-item-action>
+              <v-icon small>launch</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>
+                Unpublished
+              </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          <!-- End of available orders -->
+
+          <!-- TO available orders -->
+          <v-list-item nuxt to="/account/frank/progress" style="text-decoration: none" exact class="mt-n2">
+            <v-list-item-action>
+              <v-icon small>subject</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>
+                In progress
+              </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          <!-- End of available orders -->
+
+          <!-- TO available orders -->
+          <v-list-item nuxt to="/account/frank/unpaid" style="text-decoration: none" class="mt-n2">
+            <v-list-item-action>
+              <v-icon small>playlist_add_check</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>
+                Unpaid/Deposit
+              </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          <!-- End of available orders -->
+
+          <!-- TO available orders -->
+          <v-list-item nuxt to="/practise/frank/catalog" style="text-decoration: none" class="mt-n2" exact>
+            <v-list-item-action>
+              <v-icon small>history</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>
+                Order History
+              </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          <!-- End of available orders -->
+
+          
+
+          <v-divider class="mt-2"></v-divider>
+
+          <v-subheader inset style="margin-left: -.1em;">
+            <span class="font-weight-bold body-2">Transactions</span>
+          </v-subheader>
+
+          <!-- TO available orders -->
+          <v-list-item nuxt to="/transaction/frank" style="text-decoration: none" class="mt-n2">
+            <v-list-item-action>
+              <v-icon small>history</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>
+                History
+              </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          <!-- End of available orders -->
+
+           <v-divider class="mt-2"></v-divider>
+
+          <v-subheader inset style="margin-left: -.1em;">
+            <span class="font-weight-bold body-2">Token Management</span>
+          </v-subheader>
+
+          <!-- TO available orders -->
+          <v-list-item nuxt to="/transaction/frank" style="text-decoration: none" class="mt-n2">
+            <v-list-item-action>
+              <v-icon small>history</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>
+                Token Hisotry
+              </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          <!-- End of available orders -->
+          
+
+        </v-list>
+
         <template v-slot:append>
         <div class="pa-2">
           <NewOrder />
@@ -180,7 +295,9 @@
       components: {NewOrder},
       // data
       data: () => ({
-          
+          account: {
+            accountType: "Client Account"
+          },
           drawer: null,
       items: [
         { icon: 'mdi-contacts', text: 'Contacts', to: "/orders/available"},

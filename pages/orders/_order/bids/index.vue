@@ -67,14 +67,12 @@
 
                     <v-col cols="6" sm="4" md="2">
                         <v-btn x-small class="primary ligten-4 my-3" @click="acceptBid(bid)">
-                            <v-icon small left>done_all</v-icon>
                             <span class="text-capitalize">Accept</span>
                         </v-btn>
                     </v-col>
 
                     <v-col cols="6" sm="4" md="2">
                         <v-btn x-small class="error ligten-4 my-3" @click="rejectBid(bid)">
-                            <v-icon small left>close</v-icon>
                             <span class="text-capitalize">Reject</span>
                         </v-btn>
                     </v-col>
